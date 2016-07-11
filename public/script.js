@@ -29,16 +29,11 @@ function validateForm() {
   		//this variable changes all of the string values to numbers and adds them together to get a point sum
   		var answer = parseInt($("#q1").val())+parseInt($("#q2").val())+parseInt($("#q3").val())+parseInt($("#q4").val())+parseInt($("#q5").val())+parseInt($("#q6").val())+parseInt($("#q7").val())+parseInt($("#q8").val())+parseInt($("#q9").val())+parseInt($("#q10").val())
   		console.log(answer);
+
+
+  		//this multiplies each answer value by 2 because there are only 50 possible points and subtracts it from 100"%". This will give the "%"" match the applicants work style matches ideal candidate style
   		var totalPercentage =100-(parseInt(answer)*2)
-
-  
-
-	
-  		console.log(totalPercentage);
-		
-
-      	
-   	 		
+		console.log(totalPercentage);
 
 			// Creates an object for the user's data
 	    	var applicantData = {
@@ -46,12 +41,17 @@ function validateForm() {
 	    		score: (totalPercentage)
 	    	}
 
-			console.log("Ok");
+			
+	    	// Grab the URL of the website
+	    	var currentURL = window.location.origin;
 
-//info pulled from form and entered into database
+	    	// AJAX post the data to the applicant API. Need to enter path for API in the quotes /api/applicant
+	    	$.post(currentURL + "", applicantData, function(data){
 
 
-//info enters column into database
+	    		alert("Thank you for your application. A recruiter ")//need to change this from an alert to a model
+	    	});
+
 	}
 	else
 	{
