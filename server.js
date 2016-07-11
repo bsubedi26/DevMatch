@@ -32,7 +32,7 @@ app.set('view engine', 'handlebars');
 */
 
 
-var PORT = 8080;
+var PORT = process.env.PORT || 8080;
 
 app.listen(PORT, function() {
     console.log("Listening on %d", PORT);
