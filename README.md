@@ -4,15 +4,27 @@ DevMatch is an application for tech companies looking to hire specifically for w
 Aspects important when choosing a developer:
 
 years of exp
+
 front end, backend, or full stack
+
 web designer knowledge?
+
 language(s) known
+
 linux exp?
+
 css frameworks?
+
 html5?
+
 asp.net?
+
 MVC?
+
 language Frameworks?
+
 verson control : github? bitbucket?
+
 iOS, Android, mobile app exp?
+
 previous exp in startups, freelance, corporate?
