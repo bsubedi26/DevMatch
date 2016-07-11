@@ -25,21 +25,31 @@ function validateForm() {
 		if (validateForm() == true)
 		{
 
+	
+  		//this variable changes all of the string values to numbers and adds them together to get a point sum
+  		var answer = parseInt($("#q1").val())+parseInt($("#q2").val())+parseInt($("#q3").val())+parseInt($("#q4").val())+parseInt($("#q5").val())+parseInt($("#q6").val())+parseInt($("#q7").val())+parseInt($("#q8").val())+parseInt($("#q9").val())+parseInt($("#q10").val())
+  		console.log(answer);
+  		var totalPercentage =100-(parseInt(answer)*2)
+
+  
+
+	
+  		console.log(totalPercentage);
+		
+
+      	
+   	 		
+
+			// Creates an object for the user's data
+	    	var applicantData = {
+	    		name: $("#name").val(),
+	    		score: (totalPercentage)
+	    	}
 
 			console.log("Ok");
 
 //info pulled from form and entered into database
 
-
-
-
-//function for personality
-//pull the values from the 5 questions to calculate the %
-
-
-//add 1% for every check box that's added
-
-//result is % matching variable
 
 //info enters column into database
 	}
