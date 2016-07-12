@@ -20,12 +20,11 @@ module.exports = function(app){
 		orm.selectFramework('profiles').then(function(data){
 
 			res.render('index', {
-            profiles: data
+            skills: data
         	});
-		})
-       
-    });
 
+		})
+   	});
 };
 
 
