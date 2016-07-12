@@ -37,7 +37,12 @@ function validateForm() {
 
 			// Creates an object for the user's data
 	    	var applicantData = {
-	    		name: $("#name").val(),
+	    		first_name: $("#first_name").val(),
+	    		last_name: $("#last_name").val(),
+	    		address: $("#address").val(),
+	    		phone: $("#phone").val(),
+	    		gitHub: $("#gitHub").val(),
+	    		linkedIn: $("#linkedIn").val(),
 	    		score: (totalPercentage)
 	    	}
 
