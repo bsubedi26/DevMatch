@@ -30,7 +30,7 @@ var orm = {
     	})
     }
     
-   	addCompanyScores: function(score){
+   	addCompanyInfo: function(score){
    		return new Promise(function(resolve, reject){
    			var queryString = 'INSERT INTO recruiter';
    			connection.query(queryString, function(err, result){
