@@ -9,6 +9,12 @@ CREATE TABLE users(
     PRIMARY KEY (id)
 );
 
+CREATE TABLE recruiter(
+	id int NOT NULL AUTO_INCREMENT,
+    company_name varchar(255) NOT NULL,
+	PRIMARY KEY (id)
+);
+
 CREATE TABLE skills(
 	CSS boolean not null,
     HTML boolean not null,
@@ -23,9 +29,12 @@ CREATE TABLE skills(
     Python boolean not null,
     Groovy_on_Grails boolean not null,
     C boolean not null,
-    C++ boolean not null
+    C++ boolean not null,
+    first_language varchar(255) NOT NULL,
+    user_id int NOT NULL,
+    recruiters_id int NOT NULL,
+	FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (recruiters_id) REFERENCES recruiter(id)
 );
 
-CREATE TABLE recruiter(
-	
-);
+
