@@ -17,15 +17,21 @@ var callOrmFunctions = require('../models/model.js');
 module.exports = function(app){
 
 	app.get('/', function(req, res) {
-		orm.selectFramework('profiles').then(function(data){
-
+		orm.selectFramework('users').then(function(data){
+			console.log(data);
 			res.render('index', {
-            profiles: data
+            skills: data
         	});
-		})
-       
-    });
 
+		})
+   	});
+
+	app.put('/addUser', function(req,res){
+		orm.updateUserIntoDatabase('users').then(function(data){
+			console.log(data);
+			res.redirect('/')
+		})
+	})
 };
 
 
