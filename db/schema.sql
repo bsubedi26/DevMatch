@@ -14,7 +14,7 @@ ALTER TABLE users ADD phone_number varchar(255) NOT NULL;
 ALTER TABLE users ADD linkedin varchar(255) NOT NULL;   
 ALTER TABLE users ADD github varchar(255) NOT NULL;
 
->>>>>>> sql
+
 CREATE TABLE recruiter(
 	id int NOT NULL AUTO_INCREMENT,
     company_name varchar(255) NOT NULL,
