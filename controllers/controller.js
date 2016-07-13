@@ -17,15 +17,38 @@ var callOrmFunctions = require('../models/model.js');
 module.exports = function(app){
 
 	app.get('/', function(req, res) {
-		orm.selectFramework('profiles').then(function(data){
-
-			res.render('index', {
-            profiles: data
+		orm.selectFramework('users').then(function(data){
+			console.log(data);
+			/* This is where we will eventually render the page for the recruiter to view 
+			aplicants */
+			res.render('admin', {
+				users: data
         	});
 		})
-       
-    });
+   	});
 
+	app.put('/addUser', function(req,res){
+		orm.addUsers('').then(function(data){
+			console.log(data);
+			res.redirect('/');
+		})
+	})
+
+	app.put('/addSkill', function(req, res){
+		orm.addSkills('').then(function(data){
+			console.log(data);
+			res.redirect('/');
+		})
+	})
+	//This function will add all the company info
+	app.put('addCompany', function(req, res){
+		orm.addCompanyInfo('').then(function(data){
+			console.log(data);
+			/* we could render a modal or something here to say "Company Culture logged", or
+			something to that affect */
+			res.render();
+		})
+	})
 };
 
 
