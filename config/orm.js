@@ -5,9 +5,13 @@ var connection = require('../config/connection.js');
 
 var orm = {
 	//can use this to select all data from any table
+	/* SELECT <select_list>
+FROM Table_A A
+LEFT JOIN Table_B B
+ON A.Key = B.Key */
     selectAll: function(table) {
     	return new Promise(function(resolve, reject) {
-	        var queryString = 'SELECT * FROM ' + table;
+	        var queryString = 'SELECT * FROM' + table + 'A LEFT JOIN skills B ON A.Key = B.Key';
 	        connection.query(queryString, function(err, result) {
 	            resolve(result);
 	        });

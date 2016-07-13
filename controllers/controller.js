@@ -22,7 +22,7 @@ module.exports = function(app){
 			/* This is where we will eventually render the page for the recruiter to view 
 			aplicants */
 			res.render('admin', {
-				skills: data
+				users: data
         	});
 		})
    	});
