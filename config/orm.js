@@ -18,6 +18,9 @@ var orm = {
     addUsers: function(id){
     	return new Promise(function(resolve, reject){
     		var queryString = 'INSERT INTO users WHERE id = ?';
+    		connection.query(queryString, function(err, result){
+    			resolve(result);
+    		})
     	})
     }
 
