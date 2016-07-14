@@ -13,6 +13,7 @@ ALTER TABLE users ADD address varchar(255) NOT NULL;
 ALTER TABLE users ADD phone_number varchar(255) NOT NULL;	
 ALTER TABLE users ADD linkedin varchar(255) NOT NULL;   
 ALTER TABLE users ADD github varchar(255) NOT NULL;
+ALTER TABLE users ADD email varchar(255) NOT NULL;
 
 
 CREATE TABLE recruiter(
@@ -24,8 +25,6 @@ CREATE TABLE recruiter(
 CREATE TABLE skills(
 	CSS boolean not null,
     HTML boolean not null,
-    Node.js boolean not null,
-    Angular.js boolean not null,
     Node boolean not null,
     Angular boolean not null,
     Ruby_on_Rails boolean not null,
@@ -37,7 +36,6 @@ CREATE TABLE skills(
     Python boolean not null,
     Groovy_on_Grails boolean not null,
     C boolean not null,
-    C++ boolean not null,
     first_language varchar(255) NOT NULL,
     user_id int NOT NULL,
     recruiters_id int NOT NULL,
