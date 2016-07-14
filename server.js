@@ -10,9 +10,7 @@ var app = express();
 
 //============== NOTE: not sure if both of these are needed ===================
 //Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static(process.cwd() + '/public'));
-//To access css
-app.use(express.static('/public'));
+app.use(express.static(__dirname + '/public'));
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ 
@@ -26,11 +24,8 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 
-/*Our controller file as per the MVC standard
-			//require('./controllers/controller.js')(app);
-=============Uncomment this section once controller.js file is complete===================
-*/
-
+//Require the controller file
+require('./controllers/controller.js')(app);
 
 var PORT = process.env.PORT || 8080;
 

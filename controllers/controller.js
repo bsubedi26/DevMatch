@@ -1,4 +1,3 @@
-
 //===============================================================================
 //controller.js is the routes
 
@@ -12,19 +11,22 @@ var bodyParser = require('body-parser');
 // These data sources hold arrays of information on table-data, waitinglist, etc.
 // ===============================================================================
 
-var callOrmFunctions = require('../models/model.js');
+// var callOrmFunctions = require('../models/model.js');
 
 module.exports = function(app){
 
 	app.get('/', function(req, res) {
-		orm.selectFramework('users').then(function(data){
-			console.log(data);
+		
+		// orm.selectFramework('users').then(function(data){
+		// 	console.log(data);
 			/* This is where we will eventually render the page for the recruiter to view 
 			aplicants */
-			res.render('admin', {
-				users: data
-        	});
-		})
+		// 	res.render('admin', {
+		// 		users: data
+  //       	});
+		// })
+
+		res.render('index');
    	});
 
 	app.put('/addUser', function(req,res){
@@ -50,13 +52,3 @@ module.exports = function(app){
 		})
 	})
 };
-
-
-
-
-
-
-
-
-
-
