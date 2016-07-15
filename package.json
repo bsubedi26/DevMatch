@@ -4,11 +4,16 @@
   "description": "DevMatch is an application for tech companies looking to hire specifically for web developers and to allow these companies to search for applicants based on skills, experience, and personality. The app best matches them based on the data provided by the applicants and the company’s preference and ultimately helps align the best skilled applicants and sees how they will align with the company culture.",
   "main": "server.js",
   "dependencies": {
-    "body-parser": "^1.15.2",
+    "bcrypt-nodejs": "0.0.3",
+	"body-parser": "^1.15.2",
+	"cookie-parser": "^1.4.3",
     "express-handlebars": "^3.0.0",
     "express": "^4.14.0",
+	"express-session": "^1.14.0",
     "method-override": "^2.3.6",
-    "mysql": "^2.11.1"
+    "mysql": "^2.11.1",
+	"passport": "^0.3.2",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {
