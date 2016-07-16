@@ -5,7 +5,7 @@ var _ = require('lodash');
 
 //submit button function to capture user info and calculate personality match
 
-//$( "#submit" ).click(function(){
+$( "#submit" ).click(function(){
 //form validation function
 // function validateForm() {
 // 		  var isValid = true;
@@ -32,7 +32,7 @@ var _ = require('lodash');
 //.map will run every element through the parseInt arguement
 //parseInt will change the array from a string to numbers
 
-var answer = _.map(['4','3','2'], _.parseInt);
+var answer = _.map([$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(), ], _.parseInt);
 
 //_.sum will add the array together
 var total = _.sum(answer);
@@ -88,7 +88,7 @@ console.log(score);
 		//alert("Please fill out all questions before submitting");
 	//}
 	//return false
-	//});//end of form validation
+	});//end of form validation
 	
 
 	//end of submit onclick
