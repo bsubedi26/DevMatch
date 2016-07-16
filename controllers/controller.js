@@ -26,7 +26,7 @@ module.exports = function(app){
         	});
 		})
    	});
-
+/*
 	app.put('/addUser', function(req,res){
 		orm.addUsers('').then(function(data){
 			console.log(data);
@@ -45,18 +45,9 @@ module.exports = function(app){
 		orm.addCompanyInfo('').then(function(data){
 			console.log(data);
 			/* we could render a modal or something here to say "Company Culture logged", or
-			something to that affect */
+			something to that affect ================================
 			res.render();
 		})
 	})
+	*/
 };
-
-
-
-
-
-
-
-
-// sudoMaster Branch Tip
-

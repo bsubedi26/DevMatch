@@ -18,7 +18,7 @@ ON A.Key = B.Key */
     	});
     }
     /* For the next 2 functions below, I need to learn how to tie the User table with the skills table 
-    together by id */
+    together by id 
     addUsers: function(id){
     	return new Promise(function(resolve, reject){
     		var queryString = 'INSERT INTO users WHERE id = ?';
@@ -45,6 +45,8 @@ ON A.Key = B.Key */
    			})
    		})
    	}
+
+   	*/
 
 };
 
