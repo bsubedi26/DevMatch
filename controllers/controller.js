@@ -26,14 +26,17 @@ module.exports = function(app){
         	});
 		})
    	});
-/*
-	app.put('/addUser', function(req,res){
-		orm.addUsers('').then(function(data){
+
+	app.put('/admin', function(req,res){
+		orm.addUsers('users').then(function(data){
 			console.log(data);
-			res.redirect('/');
+			//res.redirect('/');
+			res.render('applicant', {
+				user: data
+			})
 		})
 	})
-
+/*
 	app.put('/addSkill', function(req, res){
 		orm.addSkills('').then(function(data){
 			console.log(data);
