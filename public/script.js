@@ -1,9 +1,26 @@
+var _ = require('lodash');
 
 // $(document).ready(function(){
 // console.log("js loaded");
-var _ = require('lodash');
-var answer = _.random(2, true);
-		console.log(answer);
+
+
+//.map will run every element through the parseInt arguement
+//parseInt will change the array from a string to numbers
+
+var answer = _.map(['4','3','2'], _.parseInt);
+
+//_.sum will add the array together
+var total = _.sum(answer);
+console.log(total);
+
+//subtracts the points from 100 (100%) to get the % closest to ideal candidate
+var score = _.subtract(100-total);
+console.log(score);
+
+
+
+
+
 //submit button function to capture user info and calculate personality match
 
 //$( "#submit" ).click(function(){
@@ -28,7 +45,6 @@ var answer = _.random(2, true);
 		// {
 
 
-		// Lodash test.
 		
 
 	
@@ -79,5 +95,3 @@ var answer = _.random(2, true);
 
 	//end of submit onclick
  //end of document ready
-
- // ready();
