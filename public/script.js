@@ -1,24 +1,6 @@
 var _ = require('lodash');
 
 // $(document).ready(function(){
-// console.log("js loaded");
-
-
-//.map will run every element through the parseInt arguement
-//parseInt will change the array from a string to numbers
-
-var answer = _.map(['4','3','2'], _.parseInt);
-
-//_.sum will add the array together
-var total = _.sum(answer);
-console.log(total);
-
-//subtracts the points from 100 (100%) to get the % closest to ideal candidate
-var score = _.subtract(100-total);
-console.log(score);
-
-
-
 
 
 //submit button function to capture user info and calculate personality match
@@ -42,11 +24,27 @@ console.log(score);
 		// }
 		// If all required fields are filled
 		// if (validateForm() == true)
-		// {
+	
+	// {
+		
+//LODASH USED HERE
 
+//.map will run every element through the parseInt arguement
+//parseInt will change the array from a string to numbers
+
+var answer = _.map(['4','3','2'], _.parseInt);
+
+//_.sum will add the array together
+var total = _.sum(answer);
+console.log(total);
+
+//subtracts the points from 100 (100%) to get the % closest to ideal candidate
+var score = _.subtract(100-total);
+console.log(score);
 
 		
 
+   //jQuery verison - will delete once lodash works 100%
 	
   // 		//this variable changes all of the string values to numbers and adds them together to get a point sum
   // 		var answer = parseInt($("#q1").val())+parseInt($("#q2").val())+parseInt($("#q3").val())+parseInt($("#q4").val())+parseInt($("#q5").val())+parseInt($("#q6").val())+parseInt($("#q7").val())+parseInt($("#q8").val())+parseInt($("#q9").val())+parseInt($("#q10").val())
