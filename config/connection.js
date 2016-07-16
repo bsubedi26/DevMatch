@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // var mysql = require('mysql');
 // var connection = mysql.createConnection({
 //     host: 'localhost',
@@ -5,6 +6,16 @@
 //     password: 'root',
 //     database: 'profiles_db'
 // });
+=======
+
+var mysql = require('mysql');
+var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'profiles_db'
+});
+>>>>>>> sudoMaster
 
 
 // connection.connect(function(err) {
@@ -15,6 +26,7 @@
 //     console.log('connected as id ' + connection.threadId);
 // });
 
+<<<<<<< HEAD
 // module.exports = connection;
 
 module.exports = {
@@ -26,3 +38,6 @@ module.exports = {
 	'database': 'profiles_db',
     'users_table': 'users'
 };
+=======
+module.exports = connection;
+>>>>>>> sudoMaster
