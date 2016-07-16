@@ -1,30 +1,36 @@
-
 //===============================================================================
 //controller.js is the routes
 
-//I believe this is where routes go, export them to server.js
 var express = require('express');
 var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
-
+var passport = require('passport');
 // LOAD DATA
 // We are linking our routes to a series of "data" sources. 
 // These data sources hold arrays of information on table-data, waitinglist, etc.
 // ===============================================================================
 
-var callOrmFunctions = require('../models/model.js');
+// var callOrmFunctions = require('../models/model.js');
 
 module.exports = function(app){
 
+	// process the login form
+	app.post('/register', function(req,res) {
+		console.log(req.body);
+	})
+	
 	app.get('/', function(req, res) {
-		orm.selectFramework('users').then(function(data){
-			console.log(data);
+		
+		// orm.selectFramework('users').then(function(data){
+		// 	console.log(data);
 			/* This is where we will eventually render the page for the recruiter to view 
 			aplicants */
-			res.render('admin', {
-				users: data
-        	});
-		})
+		// 	res.render('admin', {
+		// 		users: data
+  //       	});
+		// })
+
+		res.render('index');
    	});
 
 //The below is commented out to test the above first
@@ -52,18 +58,9 @@ module.exports = function(app){
 			res.render();
 		})
 	})
+<<<<<<< HEAD
 
 */
 
 
 };
-
-
-
-
-
-
-
-
-
-
