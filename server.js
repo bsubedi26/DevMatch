@@ -1,3 +1,4 @@
+
 //dependancies needed for server file
 var express = require('express');
 var methodOverride = require('method-override');
@@ -7,6 +8,7 @@ var connection = require('./config/connection.js');
 var path = require('path');
 
 var app = express();
+
 
 //============== NOTE: not sure if both of these are needed ===================
 //Serve static content for the app from the "public" directory in the application directory.
@@ -30,7 +32,6 @@ app.set('view engine', 'handlebars');
 			//require('./controllers/controller.js')(app);
 =============Uncomment this section once controller.js file is complete===================
 */
-
 
 var PORT = process.env.PORT || 8080;
 
