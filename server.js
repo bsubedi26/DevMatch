@@ -1,5 +1,3 @@
-var _ = require('lodash');
-
 
 //dependancies needed for server file
 var express = require('express');
@@ -14,8 +12,9 @@ var app = express();
 
 //============== NOTE: not sure if both of these are needed ===================
 //Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static(process.cwd() + '/public'));
 //To access css
-app.use(express.static(__dirname + '/public'));
+app.use(express.static('/public'));
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ 
@@ -34,9 +33,6 @@ app.set('view engine', 'handlebars');
 =============Uncomment this section once controller.js file is complete===================
 */
 
-app.get('/', function(req,res) {
-	res.render('applicant')
-})
 var PORT = process.env.PORT || 8080;
 
 app.listen(PORT, function() {
