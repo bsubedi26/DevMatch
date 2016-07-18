@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var UserModel = require('../models/User.js');
-var orm = require('../config/orm.js')
+var orm = require('../config/orm.js');
 var bcrypt = require('bcrypt-nodejs');
 
 //Setting the strategy for Passport
@@ -48,6 +48,7 @@ module.exports = function(app){
 	app.get('/', function(req,res) {
 		res.render('index');
 	})
+
 	app.get('/login', function(req, res){
 		res.render('login', {
 			welcomeText: "Sign In",
