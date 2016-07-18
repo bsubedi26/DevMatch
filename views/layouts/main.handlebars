@@ -3,12 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>DevMatch</title>	
 
-	<!--Favicon-->
-	<link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMdgAAdesAAHXdAAB13QAAdd0AAHXdAAB13QAAdd0AAHRdAAB13QAAdd0AAHXdAAB13QAAdd0AAHXdAAAMXQAA" rel="icon" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+	
+	{{!-- JQuery CDN --}}
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	
+	{{!-- Applicant.handlebars script file --}}
+	<script src="/js/applicant.js"></script>
+
+	<title>DevMatch</title>	
 </head>
 <body>
+	{{!-- Import header partials --}}
+	{{>header}}
+
+	{{!-- Main body content --}}
 	{{{ body }}}
+
+	{{!-- Import footer partials --}}
+	{{>footer}}
 </body>
 </html>
