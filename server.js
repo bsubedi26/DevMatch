@@ -1,4 +1,3 @@
-//Require the needed modules
 var express = require('express');
 var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
@@ -15,9 +14,6 @@ var app = express();
 //============== NOTE: not sure if both of these are needed ===================
 //Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static(__dirname + '/public'));
-
-// passport for user authentication
-// require('./config/passport')(passport); 
 
 // BodyParser interprets data sent to the server
 app.use(bodyParser.json());
@@ -38,7 +34,7 @@ app.use(session({
 //flash is used to show a message on an incorrect login
 app.use(flash());
 
-//passport authentication middleware 
+// use passport authentication middleware 
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -53,6 +49,7 @@ app.set('view engine', 'handlebars');
 require('./controllers/controller.js')(app);
 
 var PORT = process.env.PORT || 8080;
+
 app.listen(PORT, function() {
     console.log("Listening on %d", PORT);
 });

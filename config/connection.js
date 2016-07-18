@@ -1,11 +1,11 @@
 var mysql = require('mysql');
-
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'root',
     database: 'profiles_db'
 });
+
 
 connection.connect(function(err) {
     if (err) {
@@ -16,14 +16,3 @@ connection.connect(function(err) {
 });
 
 module.exports = connection;
-// exports.connectToDB = connectToDB;
-
-// module.exports = {
-//     'connection': {
-//         'host': 'localhost',
-//         'user': 'root',
-//         'password': 'root'
-//     },
-// 	'database': 'profiles_db',
-//     'users_table': 'users'
-// };

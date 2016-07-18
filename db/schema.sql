@@ -40,9 +40,7 @@ CREATE TABLE skills(
     user_id int NOT NULL,
     recruiters_id int NOT NULL,
 	FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (recruiters_id) REFERENCES recruiter(id),
-    FOREIGN KEY (user_id_hashed) REFERENCES users_table(userId)
-
+    FOREIGN KEY (recruiters_id) REFERENCES recruiter(id)
 );
 
 CREATE TABLE if not exists users_table(
@@ -50,4 +48,6 @@ CREATE TABLE if not exists users_table(
    username varchar(100) unique,
    password varchar(100)
 )
+
+
 
