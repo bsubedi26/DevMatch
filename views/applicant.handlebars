@@ -14,7 +14,7 @@
 	</div><!--end of header div-->
 
 <fieldset>
-{{#each users}}
+
 <!--BRIAN UPDATE HERE-->
 <form class="create-update-form" action="/update/{{this.id}}?_method=PUT" method="POST">
 
@@ -49,9 +49,9 @@
     </br>
     </div>
     </form>
-{{/each}}
 
-{{#each skills}}
+
+
 
 <!--BRIAN UPDATE HERE-->
 <form class="create-update-form" action="/update/{{this.id}}?_method=PUT" method="POST">
@@ -90,7 +90,7 @@
             </br>
             </form>
             </div>
-{{/each}}
+
 	</fieldset> 
 
 	<fieldset><!--groups the personality quiz together-->
