@@ -105,40 +105,54 @@ module.exports = function(app){
 	});
 //============================BASIC ROUTES=========================================================================	
 	app.get('/', function(req, res) {
-		//orm.selectAll('users').then(function(data){
-			//console.log(data);
-			/* This is where we will eventually render the page for the recruiter to view 
-			aplicants */
 			res.render('index');
-		//})
-   	});
-//Need to grab all applicant data from this====================================
-   	app.post('/apps', function(req, res) {
-		orm.addUserToDB('users').then(function(data){
-			console.log(data);
-		
-			res.render('applicant');
-		})
-   	});
-//need to display all applicant data for the recruiter
-   	app.get('/admin', function(req, res) {
-		//orm.selectAll('users').then(function(data){
-			//console.log(data);
-			/* This is where we will eventually render the page for the recruiter to view 
-			aplicants */
-			res.render('admin');
-		//})
    	});
 
-	app.post('/appSkills', function(req,res){
-		orm.addUsers('users').then(function(data){
-			console.log(data);
-			//res.redirect('/');
-			res.render('applicant', {
-				user: data
-			})
-		})
-	})
+   	app.get('/apps', function(req, res) {
+			res.render('applicant');
+   	});
+
+   	app.get('/admin', function(req, res) {
+			res.render('admin');
+   	});
+
+   	/*This route is just grabbing the user info (Name and personal info)and the I chose to redirect
+   	to the home page. I assume we will work something out instead with the login page later.*/
+   	app.post('/createUser', function(req, res){
+   		orm.addUserToDB('users').then(function(data){
+   			console.log(data);
+   			res.redirect('/')
+   		})
+   	});
+
+   	/*This route is just grabbing the actual user data (skills and culture quiz data)*/
+   	app.post('/createSkills', function(req, res){
+   		orm.addSkillsToDB('skills').then(function(data){
+   			console.log(data);
+   			res.redirect('/')
+   		})
+   	});
+//============================BASIC ROUTES=========================================================================	
+//============================NOTES BELOW====================================
+//need to display all applicant data for the recruiter
+ //   	app.get('/admin', function(req, res) {
+	// 	//orm.selectAll('users').then(function(data){
+	// 		//console.log(data);
+	// 		/* This is where we will eventually render the page for the recruiter to view 
+	// 		aplicants */
+	// 		res.render('admin');
+	// 	//})
+ //   	});
+
+	// app.post('/appSkills', function(req,res){
+	// 	orm.addUsers('users').then(function(data){
+	// 		console.log(data);
+	// 		//res.redirect('/');
+	// 		res.render('applicant', {
+	// 			user: data
+	// 		})
+	// 	})
+	// })
 /*
 	app.put('/addSkill', function(req, res){
 		orm.addSkills('').then(function(data){
