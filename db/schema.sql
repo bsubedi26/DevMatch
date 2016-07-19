@@ -43,4 +43,8 @@ CREATE TABLE skills(
     FOREIGN KEY (recruiters_id) REFERENCES recruiter(id)
 );
 
-
+CREATE TABLE if not exists users_table(
+   userId integer primary key auto_increment,
+   username varchar(100) unique,
+   password varchar(100)
+)

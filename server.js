@@ -7,6 +7,7 @@ var path = require('path');
 var passport = require('passport');
 var session  = require('express-session');
 var cookieParser = require('cookie-parser');
+var flash = require('connect-flash');
 
 var app = express();
 
@@ -14,22 +15,24 @@ var app = express();
 //Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static(__dirname + '/public'));
 
-// passport for user authentication
-require('./config/passport')(passport); 
-
 // BodyParser interprets data sent to the server
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
+app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 // cookie parser for user authentication
 app.use(cookieParser());
 // session configuration
 app.use(session({
 	secret: 'devmatch',
+	cookie: { maxAge: 60000 },
 	resave: true,
 	saveUninitialized: true
  } ));
+
+//flash is used to show a message on an incorrect login
+app.use(flash());
 
 // use passport authentication middleware 
 app.use(passport.initialize());
@@ -43,7 +46,7 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 
 //Require the controller file
-require('./controllers/controller.js')(app, passport);
+require('./controllers/controller.js')(app);
 
 var PORT = process.env.PORT || 8080;
 
