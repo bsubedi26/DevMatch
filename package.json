@@ -13,17 +13,11 @@
     "lodash": "^4.13.1",
     "method-override": "^2.3.6",
     "mysql": "^2.11.1",
-<<<<<<< HEAD
     "engines": {
     "node": "5.8.0"
   },
 	  "passport": "^0.3.2",
     "passport-local": "^1.0.0"
-=======
-	"passport": "^0.3.2",
-    "passport-local": "^1.0.0",
-	"cookie-parser": ""
->>>>>>> e0bcc601f3da3e88b9715448cc9a55ddb7029ff6
   },
   "devDependencies": {},
   "scripts": {
