@@ -19,13 +19,17 @@ passport.use(new LocalStrategy({passReqToCallback : true},
   	//Searching the ORM for the user in the database
   	orm.findUser(username, function(err, user){
   		user = user[0];
-  		if (err) { return done(err); }
-      if (!user) { return done(null, false); }
-
-      //comparing user passwords - return if not a match
-      if (bcrypt.compareSync(password, user.password) === false);
-      // if (password !== user.password) { return done(null, false);}
-      return done(null, user);
+  		if (err) { 
+  			return done(err) 
+  		}
+      		if (!user) { 
+      		return done(null, false) 
+      		}
+      		//comparing user passwords - return if not a match
+      		if (bcrypt.compareSync(password, user.password) === false) { 
+      		return done(null, false) 
+     	 	}
+      		return done(null, user);
   	});
   }
 ));
