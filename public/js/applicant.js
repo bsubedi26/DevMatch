@@ -42,8 +42,6 @@ console.log(total);
 var score = _.subtract(100-total);
 console.log(score);
 
-
-
 //this breaks their answers into 4 workstyle categories. Need to change verbaige.
 //STYLE is what we want to fill into the table
 if (score >= 75) {
@@ -55,8 +53,7 @@ if (score >= 75) {
         } else {
             style = 'Prefers working independently';
            };
-
-		
+         return style;
 
    //jQuery verison - will delete once lodash works 100%
 	

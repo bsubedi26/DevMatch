@@ -19,13 +19,17 @@ passport.use(new LocalStrategy({passReqToCallback : true},
   	//Searching the ORM for the user in the database
   	orm.findUser(username, function(err, user){
   		user = user[0];
-  		if (err) { return done(err); }
-      if (!user) { return done(null, false); }
-
-      //comparing user passwords - return if not a match
-      if (bcrypt.compareSync(password, user.password) === false);
-      // if (password !== user.password) { return done(null, false);}
-      return done(null, user);
+  		if (err) { 
+  			return done(err) 
+  		}
+      		if (!user) { 
+      		return done(null, false) 
+      		}
+      		//comparing user passwords - return if not a match
+      		if (bcrypt.compareSync(password, user.password) === false) { 
+      		return done(null, false) 
+     	 	}
+      		return done(null, user);
   	});
   }
 ));
@@ -99,44 +103,57 @@ module.exports = function(app){
 			res.redirect('/login');
 		});
 	});
-	
+//============================BASIC ROUTES=========================================================================	
 	app.get('/', function(req, res) {
-		//orm.selectAll('users').then(function(data){
-			//console.log(data);
-			/* This is where we will eventually render the page for the recruiter to view 
-			aplicants */
 			res.render('index');
-		//})
    	});
 
    	app.get('/apps', function(req, res) {
-		//orm.selectAll('users').then(function(data){
-			//console.log(data);
-			/* This is where we will eventually render the page for the recruiter to view 
-			aplicants */
 			res.render('applicant');
-		//})
    	});
 
    	app.get('/admin', function(req, res) {
-		//orm.selectAll('users').then(function(data){
-			//console.log(data);
-			/* This is where we will eventually render the page for the recruiter to view 
-			aplicants */
 			res.render('admin');
-		//})
    	});
-/*
-	app.put('/admin', function(req,res){
-		orm.addUsers('users').then(function(data){
-			console.log(data);
-			//res.redirect('/');
-			res.render('applicant', {
-				user: data
-			})
-		})
-	})
 
+   	/*This route is just grabbing the user info (Name and personal info)and the I chose to redirect
+   	to the home page. I assume we will work something out instead with the login page later.*/
+   	app.post('/createUser', function(req, res){
+   		orm.addUserToDB('users').then(function(data){
+   			console.log(data);
+   			res.redirect('/')
+   		})
+   	});
+
+   	/*This route is just grabbing the actual user data (skills and culture quiz data)*/
+   	app.post('/createSkills', function(req, res){
+   		orm.addSkillsToDB('skills').then(function(data){
+   			console.log(data);
+   			res.redirect('/')
+   		})
+   	});
+//============================BASIC ROUTES=========================================================================	
+//============================NOTES BELOW====================================
+//need to display all applicant data for the recruiter
+ //   	app.get('/admin', function(req, res) {
+	// 	//orm.selectAll('users').then(function(data){
+	// 		//console.log(data);
+	// 		/* This is where we will eventually render the page for the recruiter to view 
+	// 		aplicants */
+	// 		res.render('admin');
+	// 	//})
+ //   	});
+
+	// app.post('/appSkills', function(req,res){
+	// 	orm.addUsers('users').then(function(data){
+	// 		console.log(data);
+	// 		//res.redirect('/');
+	// 		res.render('applicant', {
+	// 			user: data
+	// 		})
+	// 	})
+	// })
+/*
 	app.put('/addSkill', function(req, res){
 		orm.addSkills('').then(function(data){
 			console.log(data);

@@ -1,10 +1,12 @@
-// var mysql = require('mysql');
-// var connection = mysql.createConnection({
-//     host: 'localhost',
-//     user: 'root',
-//     password: 'root',
-//     database: 'profiles_db'
-// });
+
+var mysql = require('mysql');
+var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'profiles_db'
+});
+
 
 
 // connection.connect(function(err) {
