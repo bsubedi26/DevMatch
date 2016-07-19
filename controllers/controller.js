@@ -19,13 +19,17 @@ passport.use(new LocalStrategy({passReqToCallback : true},
   	//Searching the ORM for the user in the database
   	orm.findUser(username, function(err, user){
   		user = user[0];
-  		if (err) { return done(err); }
-      if (!user) { return done(null, false); }
-
-      //comparing user passwords - return if not a match
-      if (bcrypt.compareSync(password, user.password) === false);
-      // if (password !== user.password) { return done(null, false);}
-      return done(null, user);
+  		if (err) { 
+  			return done(err) 
+  		}
+      		if (!user) { 
+      		return done(null, false) 
+      		}
+      		//comparing user passwords - return if not a match
+      		if (bcrypt.compareSync(password, user.password) === false) { 
+      		return done(null, false) 
+     	 	}
+      		return done(null, user);
   	});
   }
 ));
@@ -99,7 +103,7 @@ module.exports = function(app){
 			res.redirect('/login');
 		});
 	});
-	
+//============================BASIC ROUTES=========================================================================	
 	app.get('/', function(req, res) {
 		//orm.selectAll('users').then(function(data){
 			//console.log(data);
@@ -108,8 +112,8 @@ module.exports = function(app){
 			res.render('index');
 		//})
    	});
-
-   	app.get('/apps', function(req, res) {
+//Need to grab all applicant data from this
+   	app.post('/apps', function(req, res) {
 		//orm.selectAll('users').then(function(data){
 			//console.log(data);
 			/* This is where we will eventually render the page for the recruiter to view 
@@ -117,7 +121,7 @@ module.exports = function(app){
 			res.render('applicant');
 		//})
    	});
-
+//need to display all applicant data for the recruiter
    	app.get('/admin', function(req, res) {
 		//orm.selectAll('users').then(function(data){
 			//console.log(data);
@@ -126,8 +130,8 @@ module.exports = function(app){
 			res.render('admin');
 		//})
    	});
-/*
-	app.put('/admin', function(req,res){
+
+	app.post('/appSkills', function(req,res){
 		orm.addUsers('users').then(function(data){
 			console.log(data);
 			//res.redirect('/');
@@ -136,7 +140,7 @@ module.exports = function(app){
 			})
 		})
 	})
-
+/*
 	app.put('/addSkill', function(req, res){
 		orm.addSkills('').then(function(data){
 			console.log(data);

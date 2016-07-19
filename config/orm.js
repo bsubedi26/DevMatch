@@ -9,7 +9,7 @@ var orm = {
 FROM Table_A A
 LEFT JOIN Table_B B
 ON A.Key = B.Key */
-    selectAll: function(table) {
+    viewAll: function(table) {
     	return new Promise(function(resolve, reject) {
 	        var queryString = 'SELECT * FROM' + table + 'A LEFT JOIN skills B ON A.Key = B.Key';
 	        connection.query(queryString, function(err, result) {
@@ -17,12 +17,15 @@ ON A.Key = B.Key */
 	        });
     	});
     },
-    addUserToDB: function (userObj, callback) {
-    connection.query('INSERT INTO users_table SET ?', userObj, function(err, results){
-    if (err) return callback(false, err)
-    callback(true, null)
-    });
-  },
+    addUserToDB: function(table) {
+    	return new Promise(function(resolve, reject) {
+	        var queryString = 'INSERT INTO' + table + '(first_name, last_name) VALUES (?, ?)', [req.body.firstName, req.body.lastName];
+	        connection.query(queryString, function(err, result) {
+	            resolve(result);
+	        });
+    	});
+    },
+    // un .then versions, will switch above
 
   findUser: function(username, callback) {
     connection.query('SELECT * FROM users_table WHERE ?', {username: username}, function(err, user){
