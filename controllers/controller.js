@@ -99,7 +99,7 @@ module.exports = function(app){
 			res.redirect('/login');
 		});
 	});
-	
+//============================BASIC ROUTES=========================================================================	
 	app.get('/', function(req, res) {
 		//orm.selectAll('users').then(function(data){
 			//console.log(data);
@@ -108,8 +108,8 @@ module.exports = function(app){
 			res.render('index');
 		//})
    	});
-
-   	app.get('/apps', function(req, res) {
+//Need to grab all applicant data from this
+   	app.post('/apps', function(req, res) {
 		//orm.selectAll('users').then(function(data){
 			//console.log(data);
 			/* This is where we will eventually render the page for the recruiter to view 
@@ -117,7 +117,7 @@ module.exports = function(app){
 			res.render('applicant');
 		//})
    	});
-
+//need to display all applicant data for the recruiter
    	app.get('/admin', function(req, res) {
 		//orm.selectAll('users').then(function(data){
 			//console.log(data);
@@ -126,8 +126,8 @@ module.exports = function(app){
 			res.render('admin');
 		//})
    	});
-/*
-	app.put('/admin', function(req,res){
+
+	app.post('/appSkills', function(req,res){
 		orm.addUsers('users').then(function(data){
 			console.log(data);
 			//res.redirect('/');
@@ -136,7 +136,7 @@ module.exports = function(app){
 			})
 		})
 	})
-
+/*
 	app.put('/addSkill', function(req, res){
 		orm.addSkills('').then(function(data){
 			console.log(data);
