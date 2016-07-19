@@ -42,7 +42,7 @@ console.log(total);
 var score = _.subtract(100-total);
 console.log(score);
 
-		
+	
 
    //jQuery verison - will delete once lodash works 100%
 	
