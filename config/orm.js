@@ -4,11 +4,7 @@
 var connection = require('../config/connection.js');
 
 var orm = {
-	//can use this to select all data from any table
-	/* SELECT <select_list>
-FROM Table_A A
-LEFT JOIN Table_B B
-ON A.Key = B.Key */
+
     viewAll: function(table) {
     	return new Promise(function(resolve, reject) {
 	        var queryString = 'SELECT * FROM' + table + 'A LEFT JOIN skills B ON A.Key = B.Key';
@@ -19,7 +15,7 @@ ON A.Key = B.Key */
     },
     addUserToDB: function(table) {
     	return new Promise(function(resolve, reject) {
-	        var queryString = 'INSERT INTO' + table + '(first_name, last_name) VALUES (?, ?)', [req.body.firstName, req.body.lastName];
+	        var queryString = 'INSERT INTO' + table + '(first_name, last_name) VALUES (?, ?)', [req.body.first_name, req.body.last_name];
 	        connection.query(queryString, function(err, result) {
 	            resolve(result);
 	        });
@@ -31,7 +27,7 @@ ON A.Key = B.Key */
     connection.query('SELECT * FROM users_table WHERE ?', {username: username}, function(err, user){
     callback(err, user)
     })
-  }
+  },
 
    /* For the next 2 functions below, I need to learn how to tie the User table with the skills table 
     together by id 
