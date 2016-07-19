@@ -48,6 +48,3 @@ CREATE TABLE if not exists users_table(
    username varchar(100) unique,
    password varchar(100)
 )
-
-
-
