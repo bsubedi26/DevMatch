@@ -55,7 +55,7 @@ if (score >= 75) {
             style = 'Prefers working independently';
            };
 
-		
+
 
    //jQuery verison - will delete once lodash works 100%
 	
