@@ -64,10 +64,6 @@
             <input type="checkbox" name="skills" value="true">
             HTML
             <input type="checkbox" name="skills" value="true">
-            Node.js
-            <input type="checkbox" name="skills" value="true">
-            Angular.js
-            <input type="checkbox" name="skills" value="true">
             Ruby on Rails
             <input type="checkbox" name="skills" value="true">
             Java
@@ -189,18 +185,46 @@
        	
 	</fieldset><!--end of personality questions-->
 
+    <form class="create-update-form" action="/update/{{this.id}}?_method=PUT" method="POST">
+    <div class="form-group">
+            <br>
+            <h3>What do you value in a workplace culture?</h3>
+            <br>
+            <input type="checkbox" name="skills" value="high energy">
+            High Energy
+            <input type="checkbox" name="skills" value="no mediocrity">
+            Intolerance for Mediocrity
+            <input type="checkbox" name="skills" value="remote work">
+            Remote Work Availability
+            <input type="checkbox" name="skills" value="flex schedule">
+            Flexible Schedule
+            <input type="checkbox" name="skills" value="learn opportunities">
+            Opportunities to Learn and Grow
+            <input type="checkbox" name="skills" value="permanent">
+            Permanent Position
+            <input type="checkbox" name="skills" value="contract">
+            Contract or Temporary Work
+            <input type="checkbox" name="skills" value="individual space">
+            Individual Work Space
+            <input type="checkbox" name="skills" value="social">
+            Social Team Building Opportunities
+            <input type="checkbox" name="skills" value="consistent">
+            Consistent Feedback
+            <input type="checkbox" name="skills" value="equity driven">
+            Equity Driven
+            <input type="checkbox" name="skills" value="work life balance">
+            Work Life Balance
+            </br>
+            </form>
+            </div>
+
+
 	<input type="submit" id="submit" value="Submit Info">
 	</form>
 	</div><!--end of info div-->
 
 </div><!--end of main div-->
 
-<footer>&copy; 2016 Bowman, Burnside, Subedi, Veloz and Wiebelt</footer>
 
-
-<!-- jQuery -->
-<script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
-<!-- javascript -->
-<script type="text/javascript" src="js/applicant.js"></script>
 </body>
 </html>
