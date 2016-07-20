@@ -105,6 +105,7 @@ module.exports = function(app){
 	});
 //============================BASIC ROUTES=========================================================================	
 	app.get('/', function(req, res) {
+
 			res.render('index');
    	});
 
