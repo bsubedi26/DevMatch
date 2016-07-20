@@ -43,6 +43,9 @@ CREATE TABLE skills(
     FOREIGN KEY (recruiters_id) REFERENCES recruiter(id)
 );
 
+ALTER TABLE skills ADD score int NOT NULL;
+ALTER TABLE skills ADD personality_type varchar(255) NOT NULL;
+
 CREATE TABLE if not exists users_table(
    userId integer primary key auto_increment,
    username varchar(100) unique,
