@@ -1,18 +1,76 @@
-<link rel="stylesheet" type="text/css" href="css/agency.css">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Agency - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
 
 <body id="page-top" class="index">
 
-<div class="jumbotron">
-  <h1>Welcome to DevMatch</h1>
-  <p>A place for talented developers and growing companies to come together.</p>
-  <a href="#services" class="page-scroll btn btn-xl">How do I get started?</a>
-</div>
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Devmatch</a>
+            </div>
 
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Services</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#team">Team</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
 
-
-
-
-    
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Welcome to Devmatch</div>
+                <div class="intro-heading">A place for talented developers and growing companies to come together.</div>
+                <a href="#services" class="page-scroll btn btn-xl">How do I get started?</a>
+            </div>
+        </div>
+    </header>
 
     <!-- Services Section -->
     <section id="services">
@@ -32,7 +90,7 @@
                     <h4 class="service-heading">Applicants</h4>
                     <p class="text-muted">Start here to begin your survey and see what companies line up with your personality.</p>
                     <a href="/apps">
-                    <img src="agency_bootstrap/img/developer.jpg">
+                    <img src="img/developer.jpg">
                     </a>
                 </div>
                 <div class="col-md-6">
@@ -43,7 +101,7 @@
                     <h4 class="service-heading">Employers</h4>
                     <p class="text-muted">Looking for talent? Find developers that are the best match for your company culture.</p>
                     <a href="/admin">
-                    <img src="agency_bootstrap/img/recruiters.jpg" width="420" height="255">
+                    <img src="img/building.jpg" width="420" height="255">
                     </a>
                 </div>
             </div>
@@ -65,7 +123,7 @@
                     <ul class="timeline">
                         <li>
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="agency_bootstrap/img/about/login.jpg" alt="">
+                                <img class="img-circle img-responsive" src="img/about/login.jpg" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -79,7 +137,7 @@
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="agency_bootstrap/img/about/quiz.jpg" alt="">
+                                <img class="img-circle img-responsive" src="img/about/quiz.jpg" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -93,7 +151,7 @@
                         </li>
                         <li>
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="agency_bootstrap/img/about/employer1.jpg" alt="">
+                                <img class="img-circle img-responsive" src="img/about/employer1.jpg" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -107,7 +165,7 @@
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="agency_bootstrap/img/about/selection.jpg" alt="">
+                                <img class="img-circle img-responsive" src="img/about/selection.jpg" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -144,7 +202,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <img src="agency_bootstrap/img/team/bowman.jpg" width="250" height="250" class="img-responsive img-circle" alt="">
+                        <img src="img/team/bowman.jpg" width="250" height="250" class="img-responsive img-circle" alt="">
                         <h4>Danielle Bowman</h4>
                         <p class="text-muted">Lead Designer</p>
                         <ul class="list-inline social-buttons">
@@ -159,7 +217,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <img src="agency_bootstrap/img/team/2.jpg" class="img-responsive img-circle" alt="">
+                        <img src="img/team/2.jpg" class="img-responsive img-circle" alt="">
                         <h4>Brian Burnside</h4>
                         <p class="text-muted">The Man with the Plan</p>
                         <ul class="list-inline social-buttons">
@@ -174,7 +232,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <img src="agency_bootstrap/img/team/1.jpg" class="img-responsive img-circle" alt="">
+                        <img src="img/team/1.jpg" class="img-responsive img-circle" alt="">
                         <h4>Bibek Subedi</h4>
                         <p class="text-muted">Coding Wizard</p>
                         <ul class="list-inline social-buttons">
@@ -190,7 +248,7 @@
             </div>
             <div class="col-sm-6">
                     <div class="team-member">
-                        <img src="agency_bootstrap/img/team/3.jpg" class="img-responsive img-circle" alt="">
+                        <img src="img/team/3.jpg" class="img-responsive img-circle" alt="">
                         <h4>Shaina Veloz</h4>
                         <p class="text-muted">Database Pro</p>
                         <ul class="list-inline social-buttons">
@@ -205,7 +263,7 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="team-member">
-                        <img src="agency_bootstrap/img/team/wiebelt.jpg" width="250" height="250" class="img-responsive img-circle" alt="">
+                        <img src="img/team/wiebelt.jpg" width="250" height="250" class="img-responsive img-circle" alt="">
                         <h4>Devin Wiebelt</h4>
                         <p class="text-muted">Project Lead</p>
                         <ul class="list-inline social-buttons">
@@ -226,6 +284,34 @@
         </div>
     </section>
 
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Your Website 2016</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                        <li><a href="#">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
 
@@ -243,3 +329,5 @@
     <script src="js/agency.min.js"></script>
 
 </body>
+
+</html>
