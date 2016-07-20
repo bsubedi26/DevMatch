@@ -1,45 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<h1>Applicants Stored In the Database:</h1>
+<ul>
+  {{#each users}}
+    <div class="well">
+      <p><span class="label">User ID:</span> {{this.first_name}}</p>
+      <p><span class="label">Username:</span> {{this.last_name}}</p>
 
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+     <!--  <form action="/delete?_method=DELETE" method="POST">
+        <input type="hidden" name="id" value="{{this.id}}">
+        < button type="submit">Delete</button>
+      </form>
 
-    {{!-- Bootstrap CSS CDN --}}
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    {{!-- JQuery CDN --}}
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    {{!-- Bootstrap JS CDN --}}
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-    {{!-- Applicant.handlebars script file --}}
-    <script src="/js/applicant.js"></script>
-
-    <title>DevMatch</title>
-</head>
-<body>
-
-    {{!-- Import header partials --}}
-    {{>header}}
-
-    <h1>Welcome Recruiters!!</h1>
-
-    {{!-- Main body content --}}
-    {{{ body }}}
-
-    <ul>
-        {{#each users}}
-            <li>
-                <p><span class="label">First Name:</span> {{this.first_name}}</p>
-                <p><span class="label">Last Name:</span> {{this.last_name}}</p>
-                <p><span class="label">Score:</span> {{this.score}}</p>
-            </li>
-        {{/each}}
-    </ul>
-
-    {{!-- Import footer partials --}}
-    {{>footer}}
-</body>
-</html>
-
+      <a href="/quotes/{{this.id}}">Update this quote</a> -->
+    </div>
+  {{/each}}
+</ul>
