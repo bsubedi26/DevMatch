@@ -27,7 +27,7 @@ app.use(session({
 	secret: 'devmatch',
 	cookie: { maxAge: 100000 },
 	resave: true,
-	saveUninitialized: true,
+	saveUninitialized: true
  } ));
 
 //flash is used to show a message on an incorrect login
