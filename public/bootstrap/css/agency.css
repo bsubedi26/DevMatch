@@ -14,6 +14,7 @@ body {
   font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-image: url('..bootstrap/img/code.jpg');
 }
+
 .text-muted {
   color: #777777;
 }
