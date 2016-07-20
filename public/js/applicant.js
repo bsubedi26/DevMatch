@@ -1,4 +1,7 @@
-
+var answer;
+var total;
+var sum;
+var style;
 
 $(document).ready(function(){
 
