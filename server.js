@@ -8,7 +8,6 @@ var passport = require('passport');
 var session  = require('express-session');
 var cookieParser = require('cookie-parser');
 var flash = require('connect-flash');
-
 var app = express();
 
 //============== NOTE: not sure if both of these are needed ===================
@@ -26,7 +25,7 @@ app.use(cookieParser());
 // session configuration
 app.use(session({
 	secret: 'devmatch',
-	cookie: { maxAge: 60000 },
+	cookie: { maxAge: 100000 },
 	resave: true,
 	saveUninitialized: true
  } ));

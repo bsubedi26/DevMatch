@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var answer;
 var total;
 var sum;
@@ -5,6 +6,11 @@ var style;
 
 $(document).ready(function(){
 
+=======
+var _ = require('lodash');
+
+// $(document).ready(function(){
+>>>>>>> 468236ce04b98a6be9d19dc61f9c3c6fbfbf5afe
 
 
 //submit button function to capture user info and calculate personality match
@@ -46,20 +52,19 @@ console.log(total);
 var score = _.subtract(100-total);
 console.log(score);
 
-//this breaks their answers into 4 workstyle categories. Need to change verbaige.
-//STYLE is what we want to fill into the table
-if (score >= 75) {
-            style = 'Highly Team Oriented';
-        } else if (score >= 50) {
-            style = 'Team Oriented';
-        } else if (score >= 25) {
-            style = 'Partialy social';
-        } else {
-            style = 'Prefers working independently';
-           };
-         return style;
+	
 
-   
+   //jQuery verison - will delete once lodash works 100%
+	
+  // 		//this variable changes all of the string values to numbers and adds them together to get a point sum
+  // 		var answer = parseInt($("#q1").val())+parseInt($("#q2").val())+parseInt($("#q3").val())+parseInt($("#q4").val())+parseInt($("#q5").val())+parseInt($("#q6").val())+parseInt($("#q7").val())+parseInt($("#q8").val())+parseInt($("#q9").val())+parseInt($("#q10").val())
+  // 		console.log(answer);
+
+
+  // 		//this multiplies each answer value by 2 because there are only 50 possible points and subtracts it from 100"%". This will give the "%"" match the applicants work style matches ideal candidate style
+  // 		var totalPercentage =100-(parseInt(answer)*2)
+		// console.log(totalPercentage);
+
 
 			
 
@@ -96,5 +101,5 @@ if (score >= 75) {
 	});//end of form validation
 	
 
-	});//end of submit onclick
+	//end of submit onclick
  //end of document ready
