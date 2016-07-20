@@ -114,7 +114,10 @@ module.exports = function(app){
    	});
 
    	app.get('/admin', function(req, res) {
-			res.render('admin');
+   		orm.viewAll('users').then(function(data){
+   			console.log(data);
+   			res.render('admin', data)
+   		})
    	});
 
    	/*This route is just grabbing the user info (Name and personal info)and the I chose to redirect
