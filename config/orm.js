@@ -11,22 +11,24 @@ LEFT JOIN Table_B B
 ON A.Key = B.Key */
     selectAll: function(table) {
     	return new Promise(function(resolve, reject) {
-	        var queryString = 'SELECT * FROM' + table + 'A LEFT JOIN skills B ON A.Key = B.Key';
+	        // var queryString = 'SELECT * FROM' + table + 'A LEFT JOIN skills B ON A.Key = B.Key';
+          var queryString = 'SELECT * FROM ' + table;
 	        connection.query(queryString, function(err, result) {
-	            resolve(result);
+	            if (err) throw err;
+              resolve(result);
 	        });
     	});
     },
     addUserToDB: function (userObj, callback) {
-    connection.query('INSERT INTO users_table SET ?', userObj, function(err, results){
-    if (err) return callback(false, err)
-    callback(true, null)
+    connection.query('INSERT INTO users_table SET ?', userObj, function(err, results) {
+    if (err) return callback(false, err);
+    callback(true, null);
     });
   },
 
   findUser: function(username, callback) {
-    connection.query('SELECT * FROM users_table WHERE ?', {username: username}, function(err, user){
-    callback(err, user)
+    connection.query('SELECT * FROM users_table WHERE ?', {username: username}, function(err, user) {
+    callback(err, user);
     })
   }
 

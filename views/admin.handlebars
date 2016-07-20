@@ -1,9 +1,9 @@
 <h1>Applicants Stored In the Database:</h1>
 <ul>
   {{#each users}}
-    <li>
-      <p><span class="label">First Name:</span> {{this.first_name}}</p>
-      <p><span class="label">Last Name:</span> {{this.last_name}}</p>
+    <div class="well">
+      <p><span class="label">User ID:</span> {{this.first_name}}</p>
+      <p><span class="label">Username:</span> {{this.last_name}}</p>
 
      <!--  <form action="/delete?_method=DELETE" method="POST">
         <input type="hidden" name="id" value="{{this.id}}">
@@ -11,6 +11,6 @@
       </form>
 
       <a href="/quotes/{{this.id}}">Update this quote</a> -->
-    </li>
+    </div>
   {{/each}}
 </ul>
