@@ -8,7 +8,7 @@ var orm = {
     viewAll: function(table) {
     	return new Promise(function(resolve, reject) {
     		//may need to do A.ID instead of A.Key format
-	        var queryString = 'SELECT * FROM' + table + 'A LEFT JOIN skills B ON A.Key = B.Key';
+	        var queryString = 'SELECT * FROM' + table + 'A LEFT JOIN skills B ON A.ID = B.ID';
 	        connection.query(queryString, function(err, result) {
 	            resolve(result);
 	        });
