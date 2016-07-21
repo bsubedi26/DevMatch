@@ -8,13 +8,7 @@
 
     {{!-- Bootstrap CSS CDN --}}
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    {{!-- JQuery CDN --}}
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    {{!-- Bootstrap JS CDN --}}
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-    {{!-- Applicant.handlebars script file --}}
-    <script src="/js/applicant.js"></script>
 
     <title>DevMatch</title>
     {{!-- Import header partials --}}
@@ -54,11 +48,24 @@
 
 //page loads with the names of the applicants based on their score
 
-$('#submit').on('click',function(event){
-var search = $(this).data('applicants');
-for (var i = 0; i < users.length; i ++){
-if (search == company.score){
-return
+<script>
+    //loops through the users in the db
+    applicantMatch: function(whatToSelect, colToSearch, valOfCol){
+
+        //loops for skills that are valued as true
+        var queryString = 'SELECT * FROM' + tableInput + ' WHERE ' + colToSearch + ' = true';
+        connection.query(queryString, [valOfCol], function(err, result) {
+            console.log(result);
+        )};
+    };
+</script>
+{{!-- JQuery CDN --}}
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+{{!-- Bootstrap JS CDN --}}
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+{{!-- Applicant.handlebars script file --}}
+<script src="/js/applicant.js"></script>
     <ul>
         {{#each users}}
             <li>
@@ -76,9 +83,11 @@ return
     </ul>
 
     {{!-- Import footer partials --}}
-    {{>footer}}
+{{>footer}}
 </body>
 </html>
 
-module.exports = admin;
+
+
+
 
