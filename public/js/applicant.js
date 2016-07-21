@@ -1,16 +1,10 @@
-<<<<<<< HEAD
-var answer;
-var total;
-var sum;
 var style;
+var answers;
+var score;
+var total;
 
 $(document).ready(function(){
 
-=======
-var _ = require('lodash');
-
-// $(document).ready(function(){
->>>>>>> 468236ce04b98a6be9d19dc61f9c3c6fbfbf5afe
 
 
 //submit button function to capture user info and calculate personality match
@@ -51,6 +45,19 @@ console.log(total);
 //subtracts the points from 100 (100%) to get the % closest to ideal candidate
 var score = _.subtract(100-total);
 console.log(score);
+
+//this breaks their answers into 4 workstyle categories. Need to change verbaige.
+//STYLE is what we want to fill into the table
+if (score >= 75) {
+            style = 'Highly Team Oriented';
+        } else if (score >= 50) {
+            style = 'Team Oriented';
+        } else if (score >= 25) {
+            style = 'Partialy social';
+        } else {
+            style = 'Prefers working independently';
+           };
+         return style;
 
 	
 
@@ -99,7 +106,7 @@ console.log(score);
 	//}
 	//return false
 	});//end of form validation
-	
+	});
 
 	//end of submit onclick
  //end of document ready

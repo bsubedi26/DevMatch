@@ -146,11 +146,7 @@ module.exports = function(app) {
 //===========================PAGE RENDERING ROUTES============================
 
 	app.get('/', function(req, res) {
-		//orm.selectAll('users').then(function(data){
-			//console.log(data);
-			/* This is where we will eventually render the page for the recruiter to view 
-			aplicants */
-			
+
 			res.render('index');
 		//})
    	});
