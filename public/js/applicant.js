@@ -1,6 +1,16 @@
+<<<<<<< HEAD
 var _ = require('lodash');
 
 // $(document).ready(function(){
+=======
+var style;
+var answers;
+var score;
+var total;
+
+$(document).ready(function(){
+
+>>>>>>> userinfo
 
 
 //submit button function to capture user info and calculate personality match
@@ -42,6 +52,22 @@ console.log(total);
 var score = _.subtract(100-total);
 console.log(score);
 
+<<<<<<< HEAD
+=======
+//this breaks their answers into 4 workstyle categories. Need to change verbaige.
+//STYLE is what we want to fill into the table
+if (score >= 75) {
+            style = 'Highly Team Oriented';
+        } else if (score >= 50) {
+            style = 'Team Oriented';
+        } else if (score >= 25) {
+            style = 'Partialy social';
+        } else {
+            style = 'Prefers working independently';
+           };
+         return style;
+
+>>>>>>> userinfo
 	
 
    //jQuery verison - will delete once lodash works 100%
@@ -89,7 +115,7 @@ console.log(score);
 	//}
 	//return false
 	});//end of form validation
-	
+	});
 
 	//end of submit onclick
  //end of document ready
