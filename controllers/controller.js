@@ -146,7 +146,19 @@ module.exports = function(app) {
 //===========================PAGE RENDERING ROUTES============================
 
 	app.get('/', function(req, res) {
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+		//orm.selectAll('users').then(function(data){
+			//console.log(data);
+			/* This is where we will eventually render the page for the recruiter to view 
+			aplicants */
+			
+=======
+
+>>>>>>> master
+>>>>>>> ffb8740cf70150f651315450e3e29cc3de7401bf
 			res.render('index');
 		//})
    	});
@@ -165,12 +177,19 @@ module.exports = function(app) {
    	});
 
    	app.get('/admin', function(req, res) {
+<<<<<<< HEAD
 		orm.selectAll('users').then(function(data){
 			console.log(data);
 			/* This is where we will eventually render the page for the recruiter to view 
 			aplicants */
 			res.render('admin', {users: data});
 		})
+=======
+   		orm.viewAll('users').then(function(data){
+   			console.log(data);
+   			res.render('admin', data)
+   		})
+>>>>>>> master
    	});
 
 	//   Simple route middleware to ensure user is authenticated between pages
