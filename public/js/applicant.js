@@ -52,7 +52,7 @@ if (score >= 75) {
             style = 'Prefers working independently';
            };
 //================================The posts to server side====================================
-$.post('/score', {personWayOfLife: style});
+$.post('/createSkills', {personality_type: style});
 
    //jQuery verison - will delete once lodash works 100%
 	

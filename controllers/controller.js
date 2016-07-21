@@ -132,21 +132,21 @@ module.exports = function(app){
    	/*This route is just grabbing the actual user data (skills and culture quiz data)*/
    	app.post('/createSkills', function(req, res){
    			console.log("Hello " + req.body.CSS);
-   		orm.addSkillsToDB('skills', req.body.CSS).then(function(data){
+   		orm.addSkillsToDB('skills', req.body.CSS, req.body.HTML, req.body.Ruby_Rails, req.body.Java, req.body.Javascript, req.body.MySQL, req.body.React, req.body.PHP, req.body.Groovy_Grails, req.body.C_plus_plus, req.body.others, req.body.personality_type).then(function(data){
    			console.log("Please not be undefined " + data);
    			//res.redirect('/')
    		})
    	});
 
    	//=======================Need app.post
-	app.post('/score', function(req, res) {
-    		console.log(req.body.personWayOfLife);
-    	orm.addScoreToDB('skills', req.body.personWayOfLife).then(function(data){
-    		console.log(data);
-    	})
-        //if (err) throw err;
-        //res.redirect('/');
-    });
+	// app.post('/score', function(req, res) {
+ //    		console.log(req.body.personWayOfLife);
+ //    	orm.addScoreToDB('skills', req.body.personWayOfLife).then(function(data){
+ //    		console.log(data);
+ //    	})
+ //        //if (err) throw err;
+ //        //res.redirect('/');
+ //    });
 //});
 //============================BASIC ROUTES=========================================================================	
 //============================NOTES BELOW====================================
