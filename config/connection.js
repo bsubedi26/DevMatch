@@ -16,3 +16,8 @@ connection.connect(function(err) {
 });
 
 module.exports = connection;
+
+
+
+//app.listen(process.env.PORT);//var express = require('express') and var app=express() after @ is hostname to colon
+//after colon is passsword, username before colon 

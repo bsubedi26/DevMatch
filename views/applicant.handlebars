@@ -50,19 +50,20 @@
     </br>
     </div>
     </form>
-
+ 
 
 
 
 <!--BRIAN UPDATE HERE===================================================================-->
 <form class="create-update-form" action="/createSkills" method="POST">
-    <div class="form-group">
+    
             <br>
             <h3>What skills are you knowledgeable in?</h3>
             <br>
-            <input type="checkbox" name="CSS" value="true">
+            <div class="form-group">
+            <input type="checkbox" name="CSS">
             CSS
-            <input type="checkbox" name="HTML" value="true">
+          <!--   <input type="checkbox" name="HTML" value="true">
             HTML
             <input type="checkbox" name="Ruby_Rails" value="true">
             Ruby on Rails
@@ -80,13 +81,16 @@
             Groovy on Grails
             <input type="checkbox" name="C_plus_plus" value="true">
             C++
-            </br>
+            </br> 
             <br>
             Others:
             <input type="text" name="others" value="others">
-            </br>
-            </form>
-            </div>
+            </br> -->
+             </div>
+            <button type="submit">Add Skills</button>
+   
+</form>
+            
 
 	</fieldset> 
 

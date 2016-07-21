@@ -120,22 +120,34 @@ module.exports = function(app){
    		})
    	});
 
-   	/*This route is just grabbing the user info (Name and personal info)and the I chose to redirect
-   	to the home page. I assume we will work something out instead with the login page later.*/
-   	app.post('/createUser', function(req, res){
-   		orm.addUserToDB('users').then(function(data){
-   			console.log(data);
-   			res.redirect('/')
-   		})
-   	});
+   	// /*This route is just grabbing the user info (Name and personal info)and the I chose to redirect
+   	// to the home page. I assume we will work something out instead with the login page later.*/
+   	// app.post('/createUser', function(req, res){
+   	// 	orm.addUserToDB('users').then(function(data){
+   	// 		console.log(data);
+   	// 		res.redirect('/')
+   	// 	})
+   	// });
 
    	/*This route is just grabbing the actual user data (skills and culture quiz data)*/
    	app.post('/createSkills', function(req, res){
-   		orm.addSkillsToDB('skills').then(function(data){
-   			console.log(data);
-   			res.redirect('/')
+   			console.log("Hello " + req.body.CSS);
+   		orm.addSkillsToDB('skills', req.body.CSS).then(function(data){
+   			console.log("Please not be undefined " + data);
+   			//res.redirect('/')
    		})
    	});
+
+   	//=======================Need app.post
+	app.post('/score', function(req, res) {
+    		console.log(req.body.personWayOfLife);
+    	orm.addScoreToDB('skills', req.body.personWayOfLife).then(function(data){
+    		console.log(data);
+    	})
+        //if (err) throw err;
+        //res.redirect('/');
+    });
+//});
 //============================BASIC ROUTES=========================================================================	
 //============================NOTES BELOW====================================
 //need to display all applicant data for the recruiter

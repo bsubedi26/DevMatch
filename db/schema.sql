@@ -16,27 +16,10 @@ ALTER TABLE users ADD github varchar(255) NOT NULL;
 ALTER TABLE users ADD email varchar(255) NOT NULL;
 
 
-CREATE TABLE recruiter(
-	id int NOT NULL AUTO_INCREMENT,
-    company_name varchar(255) NOT NULL,
-	PRIMARY KEY (id)
-);
 
 CREATE TABLE skills(
-	CSS boolean not null,
-    HTML boolean not null,
-    Ruby_Rails boolean not null,
-    Java boolean not null,
-    Javascript boolean not null,
-    MySQL boolean not null,
-    React boolean not null,
-	PHP boolean not null,
-    Groovy_Grails boolean not null,
-    C_plus_plus boolean not null,
-    others varchar(255) NOT NULL,
-    user_id int NOT NULL,
-    recruiters_id int NOT NULL,
+    score int NOT NULL,
+    personality_type varchar(255) NOT NULL,
 	FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (recruiters_id) REFERENCES recruiter(id)
 );
 
