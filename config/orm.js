@@ -11,16 +11,11 @@ LEFT JOIN Table_B B
 ON A.Key = B.Key */
     selectAll: function(table) {
     	return new Promise(function(resolve, reject) {
-<<<<<<< HEAD
 	        // var queryString = 'SELECT * FROM' + table + 'A LEFT JOIN skills B ON A.Key = B.Key';
-          var queryString = 'SELECT * FROM ' + table;
-=======
+
     		//may need to do A.ID instead of A.Key format
 	        var queryString = 'SELECT * FROM' + table + 'A LEFT JOIN skills B ON A.ID = B.ID';
-<<<<<<< HEAD
-=======
->>>>>>> master
->>>>>>> userinfo
+
 	        connection.query(queryString, function(err, result) {
 	            if (err) throw err;
               resolve(result);
