@@ -1,184 +1,121 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>DevMatch</title>
-</head>
-<body>
+{{!-- Added padding to the body to prevent the nav bar from overlapping with body content --}}
+<link href="css/login_style.css" rel="stylesheet">
+
+<link href="css/awesome-bootstrap-checkbox.css" rel="stylesheet">
 
 <div class = "main-container">
 
-    <div class = "header">
-	   <h1>Applicant Page</h1>
-	   <!--navigation bar to go here-->
-	</div>
+<fieldset>
+<form class="col-md-4 col-md-offset-4 create-update-form" action="/createSkills" method="POST">
 
-    <fieldset>
-        <form class="create-update-form" action="/createSkills" method="POST">
-            <div class="form-group">
-                <br>
-                <label for="first_name">First Name:</label>
-                <input type="text" id="first_name" name="first_name">
-                </br>
-                <br>
-                <label for="last_name">Last Name:</label>
-                <input type="text" id="last_name" name="last_name">
-                </br>
-                <br>
-                <label for="email">Email:</label>
-                <input type="text" id="email" name="email">
-                </br>
-                <br>
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address">
-                </br>
-                <br>
-                <label for="phone_number">Phone Number:</label>
-                <input type="text" id="phone_number" name="phone_number">
-                </br>
-                <br>
-                <label for="linkedin">LinkedIn:</label>
-                <input type="text" id="linkedin" name="linkedin">
-                </br>
-                <br>
-                <label for="github">GitHub:</label>
-                <input type="text" id="github" name="github">
-                </br>
-                <br></br>
-                <br>
-<!--================= SKILLS PORTION ============================================= -->
+    <div class="form-group">
+        <label for="first_name" class="control-label">First Name</label>
+        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name">
+    </div> 
+    <div class="form-group">
+        <label for="last_name" class="control-label">Last Name</label>
+        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name">
+    </div>  
+
+    <div class="form-group"> <!-- Street 1 -->
+        <label for="address" class="control-label">Street Address 1</label>
+        <input type="text" class="form-control" id="address" name="address" placeholder="Street address, P.O. box, company name, c/o">
+    </div>                  
+                            
+    <div class="form-group"> <!-- Street 2 -->
+        <label for="street2_id" class="control-label">Street Address 2</label>
+        <input type="text" class="form-control" id="street2_id" name="street2" placeholder="Apartment, suite, unit, building, floor, etc.">
+    </div>  
+
+    <div class="form-group"> <!-- City-->
+        <label for="city_id" class="control-label">City</label>
+        <input type="text" class="form-control" id="city_id" name="city" placeholder="Smallville">
+    </div>                                  
+
+    <div class="form-group"> <!-- Zip Code-->
+        <label for="zip_id" class="control-label">Zip Code</label>
+        <input type="text" class="form-control" id="zip_id" name="zip" placeholder="#####">
+    </div>      
+    <div class="form-group">
+        <label for="phone_number" class="control-label">Phone Number</label>
+        <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Phone Number">
+    </div> 
+
+    <div class="form-group">
+        <label for="linkedin" class="control-label">LinkedIn</label>
+        <input type="text" class="form-control" id="linkedin" name="linkedin" placeholder="LinkedIn Userame">
+    </div> 
+
+    <div class="form-group">
+        <label for="github" class="control-label">Github</label>
+        <input type="text" class="form-control" id="github" name="github" placeholder="Github Username">
+    </div> 
+
+    <!--================= SKILLS PORTION ============================================= -->
                 <h3>What skills are you knowledgeable in?</h3>
-                <br>
                 <div class="form-group">
+
+                    <div class="checkbox">
                     <input type="checkbox" name="CSS">
-                    CSS
+                    <label for="CSS">CSS</label>
+                    </div>
+
+                    <div class="checkbox">
                     <input type="checkbox" name="HTML">
-                    HTML
+                    <label for="HTML">HTML</label>
+                    </div>
+
+                    <div class="checkbox">
                     <input type="checkbox" name="Ruby_Rails">
-                    Ruby on Rails
+                    <label for="Ruby_Rails">Ruby on Rails</label>
+                    </div>
+
+                    <div class="checkbox">
                     <input type="checkbox" name="Java">
-                    Java
+                    <label for="Java">Java</label>
+                    </div>
+
+                    <div class="checkbox">
                     <input type="checkbox" name="Javascript">
-                    Javascript
-                    <input type="checkbox" name="MySQL">
-                    MySQL
+                    <label for="Javascript">Javascript</label>
+                    </div>
+                    
+                    <div class="checkbox">
+                    <input type="checkbox" name="MYSQL">
+                    <label for="MYSQL">MYSQL</label>
+                    </div>
+                    
+                    <div class="checkbox">
                     <input type="checkbox" name="React">
-                    React
+                    <label for="React">React</label>
+                    </div>
+
+                    <div class="checkbox">
                     <input type="checkbox" name="PHP">
-                    PHP
+                    <label for="PHP">PHP</label>
+                    </div>
+
+                    <div class="checkbox">
                     <input type="checkbox" name="Groovy_Grails">
-                    Groovy on Grails
+                    <label for="Groovy_Grails">Groovy on Grails</label>
+                    </div>
+
+                    <div class="checkbox">
                     <input type="checkbox" name="C_plus_plus">
-                    C++
+                    <label for="C_plus_plus">C++</label>
+                    </div>
+                    
                     </br> 
                     <br>
-                    Others:
-                    <input type="text" name="others">
-                    </br>
+                    <div class="form-group">
+                        <label for="others" class="control-label">Others</label>
+                        <input type="text" class="form-control" id="others" name="others" placeholder="Others">
                  </div>
-            </div>
-            <button type="submit">Add Info</button>
-        </form>
-    </fieldset> 
 
-    <fieldset><!--groups the personality quiz together-->
-    	<h2>Tell us a little about you and your work style.</h2>
-
-    	<h3>I enjoy collaborating with a team.</h3>
-    	 	<select data-placeholder="" class="chosen-select" id="q1">
-    	 		<option value=""></option>
-                <option value="2">Not like me at all</option>
-                <option value="4">A little like me</option>
-                <option value="6">Somewhat like me</option>
-                <option value="8">A lot like me</option>
-                <option value="10">Exactly like me</option> 
-           	</select>
-        	<h3>I do my best work under pressure.</h3>
-    	 	<select data-placeholder="" class="chosen-select" id="q2">
-    	 		<option value=""></option>
-                <option value="2">Not like me at all</option>
-                <option value="4">A little like me</option>
-                <option value="6">Somewhat like me</option>
-                <option value="8">A lot like me</option>
-                <option value="10">Exactly like me</option> 
-           	</select>
-           	<h3>I use established systems and routines to complete tasks.</h3>
-    	 	<select data-placeholder="" class="chosen-select" id="q3">
-    	 		<option value=""></option>
-                <option value="2">Not like me at all</option>
-                <option value="4">A little like me</option>
-                <option value="6">Somewhat like me</option>
-                <option value="8">A lot like me</option>
-                <option value="10">Exactly like me</option> 
-           	</select>
-           		<h3>It's hard for me to take time for leisure when there's still work to do.</h3>
-    	 	<select data-placeholder="" class="chosen-select" id="q4">
-    	 		<option value=""></option>
-                <option value="10">Not like me at all</option>
-                <option value="8">A little like me</option>
-                <option value="6">Somewhat like me</option>
-                <option value="4">A lot like me</option>
-                <option value="2">Exactly like me</option> 
-           	</select>
-           		<h3>I enjoy mentoring other team members.</h3>
-    	 	<select data-placeholder="" class="chosen-select" id="q5">
-    	 		<option value=""></option>
-                <option value="2">Not like me at all</option>
-                <option value="4">A little like me</option>
-                <option value="6">Somewhat like me</option>
-                <option value="8">A lot like me</option>
-                <option value="10">Exactly like me</option>  
-           	</select>
-           	<h3>I have trouble telling my colleagues "no".</h3>
-    	 	<select data-placeholder="" class="chosen-select" id="q6">
-    	 		<option value=""></option>
-                <option value="10">Not like me at all</option>
-                <option value="8">A little like me</option>
-                <option value="6">Somewhat like me</option>
-                <option value="4">A lot like me</option>
-                <option value="2">Exactly like me</option> 
-           	</select>
-           	<h3>When I brainstorm, I talk to others about my ideas.</h3>
-    	 	<select data-placeholder="" class="chosen-select" id="q7">
-    	 		<option value=""></option>
-                <option value="2">Not like me at all</option>
-                <option value="4">A little like me</option>
-                <option value="6">Somewhat like me</option>
-                <option value="8">A lot like me</option>
-                <option value="10">Exactly like me</option> 
-           	</select>
-           	<h3>I focus best alone in a room.</h3>
-    	 	<select data-placeholder="" class="chosen-select" id="q8">
-    	 		<option value=""></option>
-                <option value="10">Not like me at all</option>
-                <option value="8">A little like me</option>
-                <option value="6">Somewhat like me</option>
-                <option value="4">A lot like me</option>
-                <option value="2">Exactly like me</option> 
-           	</select>
-           	<h3>I'm comfortable receiving constructive feedback.</h3>
-    	 	<select data-placeholder="" class="chosen-select" id="q9">
-    	 	<option value=""></option>
-                <option value="2">Not like me at all</option>
-                <option value="4">A little like me</option>
-                <option value="6">Somewhat like me</option>
-                <option value="8">A lot like me</option>
-                <option value="10">Exactly like me</option> 
-           	</select>
-           	<h3>I enjoy building relationships with my team members. </h3>
-    	 	<select data-placeholder="" class="chosen-select" id="q10">
-    	 		<option value=""></option>
-                <option value="2">Not like me at all</option>
-                <option value="4">A little like me</option>
-                <option value="6">Somewhat like me</option>
-                <option value="8">A lot like me</option>
-                <option value="10">Exactly like me</option> 
-           	</select>
-        </fieldset>
-<!--=====================end of personality questions===================-->
-	    <input type="submit" id="submit" value="Submit Personality Test">
+            <!-- Submit Button -->
+            <div class="form-group"> 
+                <button type="submit" class="btn btn-primary btn-lg">Submit!</button>
+            </div> 
+        </form>         
+    </fieldset>
 </div><!--end of main div-->
-
-</body>
-</html>
