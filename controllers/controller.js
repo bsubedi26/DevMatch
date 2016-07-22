@@ -176,6 +176,13 @@ module.exports = function(app) {
    		// })
    	});
 
+   	app.get('/adminLogin', function(req,res) {
+   			res.render('adminLogin', {
+			welcomeText: "Admin Authentication Login",
+			message: req.flash('error')[0]
+		});
+   	})
+
    	/*This route is just grabbing the user info (Name and personal info)and the I chose to redirect
    	to the home page. I assume we will work something out instead with the login page later.*/
    	app.post('/createUser', function(req, res){
@@ -193,6 +200,15 @@ module.exports = function(app) {
    		})
    	});
  });
+
+   	/*This route is just grabbing the actual user data (skills and culture quiz data)*/
+   	app.post('/createSkills', function(req, res){
+   			console.log("Hello " + req.body.CSS);
+   		orm.addSkillsToDB('skills', req.body.CSS, req.body.HTML, req.body.Ruby_Rails, req.body.Java, req.body.Javascript, req.body.MySQL, req.body.React, req.body.PHP, req.body.Groovy_Grails, req.body.C_plus_plus, req.body.others, req.body.personality_type).then(function(data){
+   			console.log("Please not be undefined " + data);
+   			//res.redirect('/')
+   		})
+   	});
 
 	//   Simple route middleware to ensure user is authenticated between pages
 	//   Use this route middleware for any routes that needs to be protected.  If

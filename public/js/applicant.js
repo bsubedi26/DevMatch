@@ -1,20 +1,11 @@
-<<<<<<< HEAD
-var _ = require('lodash');
+$(document).ready(function(){
 
-// $(document).ready(function(){
-=======
 var style;
 var answers;
 var score;
 var total;
 
-$(document).ready(function(){
-
->>>>>>> userinfo
-
-
 //submit button function to capture user info and calculate personality match
-
 $( "#submit" ).click(function(){
 //form validation function
 // function validateForm() {
@@ -52,8 +43,6 @@ console.log(total);
 var score = _.subtract(100-total);
 console.log(score);
 
-<<<<<<< HEAD
-=======
 //this breaks their answers into 4 workstyle categories. Need to change verbaige.
 //STYLE is what we want to fill into the table
 if (score >= 75) {
@@ -67,8 +56,8 @@ if (score >= 75) {
            };
          return style;
 
->>>>>>> userinfo
-	
+//================================The posts to server side====================================
+	$.post('/createSkills', {personality_type: style});
 
    //jQuery verison - will delete once lodash works 100%
 	
@@ -115,7 +104,5 @@ if (score >= 75) {
 	//}
 	//return false
 	});//end of form validation
-	});
+}); //end of document ready function
 
-	//end of submit onclick
- //end of document ready
