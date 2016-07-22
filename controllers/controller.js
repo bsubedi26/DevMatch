@@ -144,112 +144,50 @@ module.exports = function(app) {
 	});
 
 //===========================PAGE RENDERING ROUTES============================
-
 	app.get('/', function(req, res) {
 
-		//orm.selectAll('users').then(function(data){
-			//console.log(data);
-			/* This is where we will eventually render the page for the recruiter to view 
-			aplicants */
-			
 			res.render('index');
-		//})
    	});
 
-	//route for the applicant quiz/survey: passing in the authenticateUser middleware
-	//to ensure persistent login sessions, which means that the user has to be logged in
-	//to view this route. If the user is not logged in, they will be redirected to /login
-   	app.get('/apps', authenticateUser, function(req, res) {
-		//orm.selectAll('users').then(function(data){
-			//console.log(data);
-			/* This is where we will eventually render the page for the recruiter to view 
-			aplicants */
-			console.log(req.session)
+   	app.get('/apps', function(req, res) {
 			res.render('applicant');
-		//})
    	});
 
    	app.get('/admin', function(req, res) {
-   			res.render('admin')
-   		// orm.viewAll('users').then(function(data){
-   		// 	console.log(data);
-   		// })
-   	});
-
-   	app.get('/adminLogin', function(req,res) {
-   			res.render('adminLogin', {
-			welcomeText: "Admin Authentication Login",
-			message: req.flash('error')[0]
-		});
-   	})
-
-   	/*This route is just grabbing the user info (Name and personal info)and the I chose to redirect
-   	to the home page. I assume we will work something out instead with the login page later.*/
-   	app.post('/createUser', function(req, res){
-   		orm.addUserToDB('users').then(function(data){
-
-		orm.selectAll('users').then(function(data){
-			console.log(data);
-			/* This is where we will eventually render the page for the recruiter to view 
-			aplicants */
-			res.render('admin', {users: data});
-		})
    		orm.viewAll('users').then(function(data){
    			console.log(data);
    			res.render('admin', data)
    		})
    	});
- });
+
+   	// /*This route is just grabbing the user info (Name and personal info)and the I chose to redirect
+   	// to the home page. I assume we will work something out instead with the login page later.*/
+   	// app.post('/createUser', function(req, res){
+   	// 	orm.addUserToDB('users').then(function(data){
+   	// 		console.log(data);
+   	// 		res.redirect('/')
+   	// 	})
+   	// });
 
    	/*This route is just grabbing the actual user data (skills and culture quiz data)*/
    	app.post('/createSkills', function(req, res){
    			console.log("Hello " + req.body.CSS);
-   		orm.addSkillsToDB('skills', req.body.CSS, req.body.HTML, req.body.Ruby_Rails, req.body.Java, req.body.Javascript, req.body.MySQL, req.body.React, req.body.PHP, req.body.Groovy_Grails, req.body.C_plus_plus, req.body.others, req.body.personality_type).then(function(data){
+   		orm.addSkillsToDB('skills', req.body.first_name, req.body.last_name, req.body.email, req.body.address, req.body.phone_number, req.body.linkedin, req.body.github, req.body.CSS, req.body.HTML, req.body.Ruby_Rails, req.body.Java, req.body.Javascript, req.body.MySQL, req.body.React, req.body.PHP, req.body.Groovy_Grails, req.body.C_plus_plus, req.body.others).then(function(data){
    			console.log("Please not be undefined " + data);
-   			//res.redirect('/')
+   			//res.redirect('/apps')
    		})
    	});
 
-	//   Simple route middleware to ensure user is authenticated between pages
-	//   Use this route middleware for any routes that needs to be protected.  If
-	//   the request is authenticated (typically via a persistent login session),
-	//   the request will proceed.  Otherwise, the user will be redirected to the
-	//   login page.
-	function authenticateUser(req, res, next) {
-	  	// if user is authenticated in the session, go to the next middleware
-	  	if (req.isAuthenticated()) { return next(); }
-     	// if user is not authenticated, redirect them to the home page
-	  	res.redirect('/login')
-	}
-
-/*
-	app.put('/admin', function(req,res){
-		orm.addUsers('users').then(function(data){
-			console.log(data);
-			//res.redirect('/');
-			res.render('applicant', {
-				user: data
-			})
-		})
-	})
-
-	app.put('/addSkill', function(req, res){
-		orm.addSkills('').then(function(data){
-			console.log(data);
-			res.redirect('/');
-		})
-	})
-	//This function will add all the company info
-	app.put('addCompany', function(req, res){
-		orm.addCompanyInfo('').then(function(data){
-			console.log(data);
-			/* we could render a modal or something here to say "Company Culture logged", or
-			something to that affect ================================
-			res.render();
-		})
-	})
-	*/
-
+   	//=======================Need app.post
+	app.post('/score', function(req, res) {
+    		console.log("YO YO BRO" + req.body.personality_type);
+    	orm.addScoreToDB('scores', req.body.personality_type).then(function(data){
+    		console.log(data);
+    	})
+        //if (err) throw err;
+        //res.redirect('/');
+    });
+// });
 //===========================POST Routes============================
 	//signin post route: if successful redirect to /authenticated
 	//if unsuccessful redirect back to /login
