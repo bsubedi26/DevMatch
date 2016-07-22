@@ -29,7 +29,7 @@ passport.use(new GitHubStrategy({
       // represent the logged-in user. Still need to add the
       // GitHub account within a user record in the database,
       // and return that user from the database instead
-      
+
       // console.log(profile)
     return done(null, profile);
   });
@@ -41,15 +41,15 @@ passport.use(new LocalStrategy({passReqToCallback : true},
   	//Searching the ORM for the user in the database
   	orm.findUser(username, function(err, user){
   		user = user[0];
-  		if (err) { 
-  			return done(err) 
+  		if (err) {
+  			return done(err)
   		}
-      	if (!user) { 
-      		return done(null, false) 
+      	if (!user) {
+      		return done(null, false)
       	}
       	//comparing user passwords - return if not a match
-      	if (bcrypt.compareSync(password, user.password) === false) { 
-      		return done(null, false) 
+      	if (bcrypt.compareSync(password, user.password) === false) {
+      		return done(null, false)
      	 }
       	return done(null, user);
   	});
@@ -57,7 +57,7 @@ passport.use(new LocalStrategy({passReqToCallback : true},
 ));
 
 //In order to provide persistent login sessions, Passport needs to be able to
-//serialize users into the session and deserialize users out of the session.  
+//serialize users into the session and deserialize users out of the session.
 passport.serializeUser(function(user, done) {
   done(null, user);
 });
@@ -72,8 +72,8 @@ module.exports = function(app) {
 //======================GITHUB ROUTES============================
 	//Route for when the user clicks the login with github button
 	app.get('/auth/github',
-	passport.authenticate('github', { 
-		scope: [ 'user:email' ] 
+	passport.authenticate('github', {
+		scope: [ 'user:email' ]
 	}),
 	function(req, res){
 	// The request will be redirected to GitHub for authentication, so this
@@ -104,19 +104,22 @@ module.exports = function(app) {
 		req.session.addnew = 'adding_new';
 
 		res.render('login', {
-			welcomeText: "Applicant Login",
 			actionBtn: 'signin',
 			message: req.flash('error')[0],
-			otherAction: "Register"
+			otherAction: "register",
+			action: "Sign in",
+			alternative: "Create account",
+			github: true
 		});
 	});
 
 	//signup page route
 	app.get('/register', function(req, res){
 		res.render('login', {
-			welcomeText: "Register for an Account",
 			actionBtn: 'register',
-			otherAction: "Signin"
+			otherAction: "signin",
+			action: "Register",
+			alternative: "Already have an Account? Login"
 		});
 	});
 
@@ -130,81 +133,64 @@ module.exports = function(app) {
 	  req.logout();
 	  res.redirect('/login');
 	});
-		
-	//route that authenticates user login between pages
-	app.get('/authenticated', function(req,res){
-		if (req.isAuthenticated()) {
-			console.log(req.session)
-			res.render('authenticated', {
-				username: req.user.username
-			})
-		} else {
-			res.redirect('/login')
-		}
-	});
 
 //===========================PAGE RENDERING ROUTES============================
-
 	app.get('/', function(req, res) {
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-		//orm.selectAll('users').then(function(data){
-			//console.log(data);
-			/* This is where we will eventually render the page for the recruiter to view 
-			aplicants */
-			
-=======
-
->>>>>>> master
->>>>>>> userinfo
 			res.render('index');
-		//})
    	});
 
-	//route for the applicant quiz/survey: passing in the authenticateUser middleware
-	//to ensure persistent login sessions, which means that the user has to be logged in
-	//to view this route. If the user is not logged in, they will be redirected to /login
-   	app.get('/apps', authenticateUser, function(req, res) {
-		//orm.selectAll('users').then(function(data){
-			//console.log(data);
-			/* This is where we will eventually render the page for the recruiter to view 
-			aplicants */
-			console.log(req.session)
+   	app.get('/apps', function(req, res) {
 			res.render('applicant');
-		//})
    	});
 
    	app.get('/admin', function(req, res) {
-<<<<<<< HEAD
    		orm.viewAll('users').then(function(data){
    			console.log(data);
    			res.render('admin', data)
    		})
    	});
 
-   	/*This route is just grabbing the user info (Name and personal info)and the I chose to redirect
-   	to the home page. I assume we will work something out instead with the login page later.*/
-   	app.post('/createUser', function(req, res){
-   		orm.addUserToDB('users').then(function(data){
-=======
-<<<<<<< HEAD
-		orm.selectAll('users').then(function(data){
-			console.log(data);
-			/* This is where we will eventually render the page for the recruiter to view 
-			aplicants */
-			res.render('admin', {users: data});
-		})
-=======
-   		orm.viewAll('users').then(function(data){
->>>>>>> userinfo
-   			console.log(data);
-   			res.render('admin', data)
+	app.get('/adminLogin', function(req,res) {
+   			res.render('adminLogin', {
+			welcomeText: "Admin Authentication Login",
+			message: req.flash('error')[0]
+		});
+   	})
+
+   	app.get('/applicant2', function(req,res) {
+   		res.render('applicant2');
+   	})
+
+   	// /*This route is just grabbing the user info (Name and personal info)and the I chose to redirect
+   	// to the home page. I assume we will work something out instead with the login page later.*/
+   	// app.post('/createUser', function(req, res){
+   	// 	orm.addUserToDB('users').then(function(data){
+   	// 		console.log(data);
+   	// 		res.redirect('/')
+   	// 	})
+   	// });
+
+   	/*This route is just grabbing the actual user data (skills and culture quiz data)*/
+   	app.post('/createSkills', function(req, res){
+   			console.log("Hello " + req.body.CSS);
+   		orm.addSkillsToDB('skills', req.body.first_name, req.body.last_name, req.body.email, req.body.address, req.body.phone_number, req.body.linkedin, req.body.github, req.body.CSS, req.body.HTML, req.body.Ruby_Rails, req.body.Java, req.body.Javascript, req.body.MySQL, req.body.React, req.body.PHP, req.body.Groovy_Grails, req.body.C_plus_plus, req.body.others).then(function(data){
+   			console.log("Please not be undefined " + data);
+   			res.redirect('/applicant2');
    		})
->>>>>>> master
    	});
 
+   	//=======================Need app.post
+	app.post('/score', function(req, res) {
+    		console.log("YO YO BRO" + req.body.personality_type);
+    	orm.addScoreToDB('scores', req.body.personality_type).then(function(data){
+    		console.log(data);
+    		res.redirect('/profile');
+    	})
+        //if (err) throw err;
+        //res.redirect('/');
+    });
+// });
 	//   Simple route middleware to ensure user is authenticated between pages
 	//   Use this route middleware for any routes that needs to be protected.  If
 	//   the request is authenticated (typically via a persistent login session),
@@ -213,45 +199,16 @@ module.exports = function(app) {
 	function authenticateUser(req, res, next) {
 	  	// if user is authenticated in the session, go to the next middleware
 	  	if (req.isAuthenticated()) { return next(); }
-     	// if user is not authenticated, redirect them to the home page
-	  	res.redirect('/login')
+     		// if user is not authenticated, redirect them to the home page
+	  	res.redirect('/login');
 	}
-
-/*
-	app.put('/admin', function(req,res){
-		orm.addUsers('users').then(function(data){
-			console.log(data);
-			//res.redirect('/');
-			res.render('applicant', {
-				user: data
-			})
-		})
-	})
-
-	app.put('/addSkill', function(req, res){
-		orm.addSkills('').then(function(data){
-			console.log(data);
-			res.redirect('/');
-		})
-	})
-	//This function will add all the company info
-	app.put('addCompany', function(req, res){
-		orm.addCompanyInfo('').then(function(data){
-			console.log(data);
-			/* we could render a modal or something here to say "Company Culture logged", or
-			something to that affect ================================
-			res.render();
-		})
-	})
-	*/
-
 //===========================POST Routes============================
 	//signin post route: if successful redirect to /authenticated
 	//if unsuccessful redirect back to /login
 	app.post('/signin', passport.authenticate('local',
-		{failureRedirect:'/login', failureFlash:'Wrong Username or Password'}), 
+		{failureRedirect:'/login', failureFlash:'Wrong Username or Password'}),
 		function(req, res) {
-			res.redirect('/authenticated');
+			res.redirect('/apps');
 		});
 
 	//signup post route: creates a new user using the user model object
@@ -259,12 +216,11 @@ module.exports = function(app) {
 		var user = new UserModel(req.body);
 		UserModel.saveUser(user, function(status){
 			if(!status) {
-				res.redirect('/register')
+				res.redirect('/register');
 				return false
 			}
 			res.redirect('/login');
 		});
 	});
-	
-};
 
+};

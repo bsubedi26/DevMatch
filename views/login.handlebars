@@ -1,39 +1,58 @@
 {{!-- Added padding to the body to prevent the nav bar from overlapping with body content --}}
 <link href="css/login_style.css" rel="stylesheet">
 
-<div class="row" id="usernameContainer">
-	<div class="col-md-4 col-md-offset-4 welcomeText text-center">
-		<h1>{{welcomeText}}</h1>
-		<h3>{{message}}</h3>
-	</div>
+{{!-- Added padding to the body to prevent the nav bar from overlapping with body content --}}
+<link href="css/sticky_footer.css" rel="stylesheet">
+
+{{!-- Background image for login page only --}}
+<style>
+	body { 
+		background: url(http://i.imgur.com/GHr12sH.jpg) no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+
+</style>
+
+{{!-- link jquery password plugin --}}
+<script type="text/javascript" src="js/password-plugin.js"></script>
+
+<div class="container">
+  
+  <div class="row" id="pwd-container">
+    <div class="col-md-4"></div>
+    
+    <div class="col-md-4">
+      <section class="login-form">
+        <form method="post" action="/{{actionBtn}}" role="login">
+          <img src="http://i.imgur.com/RcmcLv4.png" class="img-responsive" alt="" />
+          
+          <input type="email" id="username" name="username" placeholder="Email" required class="form-control input-lg" />
+          
+          <input type="password" name="password" class="form-control input-lg" id="password" placeholder="Password" required="" />
+          
+          <div class="pwstrength_viewport_progress"></div>
+          
+          <button id="submitUser" type="submit" name="go" class="btn btn-lg btn-primary btn-block">{{action}}</button>
+          
+          {{!-- If github is one of the properties then render the login button for github --}}
+          {{#if github}}
+          <a href="/auth/github" class="btn btn-default btn-lg btn-block"><i class="fa fa-github fa-fw"></i> <span class="network-name">Login with Github</span></a>
+          {{/if}}
+          
+          <br>
+          <div>
+            <a href="/{{otherAction}}" type="submit" id="submitUser">{{alternative}}</a>
+         
+          </div>
+          
+        </form>
+      
+      </section>  
+      </div>
+      
+      <div class="col-md-4"></div>    
+  </div>
 </div>
-<br>
-<form method="post" action="/{{actionBtn}}">
-	<div class="row">
-		<div class="col-md-4 col-md-offset-4 authInputs">
-			<input id="username" name="username" placeholder="Username" />
-		</div>
-	</div>
-	<br>
-	<div class="row">
-		<div class="col-md-4 col-md-offset-4 authInputs">
-			<input id="password" type="password" name="password" placeholder="Password" />
-		</div>
-	</div>
-	<br>
-	<div class="row">
-		<div class="col-md-4 col-md-offset-4">
-			<button class="btn btn-primary" type="submit" id="submitUser">Submit</button>
-		</div>
-	</div>
-</form>
-<br>
-<div class="row">
-		<div class="col-md-4 col-md-offset-4">
-			<a href="/{{otherAction}}" class="btn btn-success" type="submit" id="submitUser">{{otherAction}}</a>
-		</div>
-		<div class="col-md-4 col-md-offset-4">
-			<hr>
-			<a href="/auth/github" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Login with Github</span></a>
-		</div>
-	</div>
