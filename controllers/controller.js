@@ -140,7 +140,12 @@ module.exports = function(app) {
 			res.render('index');
    	});
 
-   	app.get('/apps', function(req, res) {
+	//route for the applicant quiz/survey: passing in the authenticateUser middleware
+	//to ensure persistent login sessions, which means that the user has to be logged in
+	//to view this route. If the user is not logged in, they will be redirected to /login
+   	app.get('/apps', authenticateUser, function(req, res) {
+
+			console.log(req.session)
 			res.render('applicant');
    	});
 
