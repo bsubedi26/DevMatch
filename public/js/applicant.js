@@ -57,7 +57,7 @@ if (score >= 75) {
          return style;
 
 //================================The posts to server side====================================
-	$.post('/createSkills', {personality_type: style});
+$.post('/score', {personality_type: style});
 
    //jQuery verison - will delete once lodash works 100%
 	
