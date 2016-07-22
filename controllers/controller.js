@@ -114,10 +114,12 @@ module.exports = function(app){
    	});
 
    	app.get('/admin', function(req, res) {
-   		orm.viewAll('users').then(function(data){
+   		orm.viewAll('skills').then(function(data){
    			console.log(data);
-   			res.render('admin', data)
-   		})
+   			res.render('admin', {
+   				skills: data
+   			});
+   		});
    	});
 
    	// /*This route is just grabbing the user info (Name and personal info)and the I chose to redirect
@@ -135,7 +137,7 @@ module.exports = function(app){
    		orm.addSkillsToDB('skills', req.body.first_name, req.body.last_name, req.body.email, req.body.address, req.body.phone_number, req.body.linkedin, req.body.github, req.body.CSS, req.body.HTML, req.body.Ruby_Rails, req.body.Java, req.body.Javascript, req.body.MySQL, req.body.React, req.body.PHP, req.body.Groovy_Grails, req.body.C_plus_plus, req.body.others).then(function(data){
    			console.log("Please not be undefined " + data);
    			//res.redirect('/apps')
-   		})
+   		});
    	});
 
    	//=======================Need app.post
@@ -143,7 +145,7 @@ module.exports = function(app){
     		console.log("YO YO BRO" + req.body.personality_type);
     	orm.addScoreToDB('scores', req.body.personality_type).then(function(data){
     		console.log(data);
-    	})
+    	});
         //if (err) throw err;
         //res.redirect('/');
     });
