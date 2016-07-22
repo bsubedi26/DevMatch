@@ -8,355 +8,181 @@
 <body>
 
 <div class = "main-container">
+
     <div class = "header">
 	   <h1>Applicant Page</h1>
 	   <!--navigation bar to go here-->
-	</div><!--end of header div-->
+	</div>
 
     <fieldset>
+        <form class="create-update-form" action="/createSkills" method="POST">
+            <div class="form-group">
+                <br>
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name">
+                </br>
+                <br>
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name">
+                </br>
+                <br>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email">
+                </br>
+                <br>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address">
+                </br>
+                <br>
+                <label for="phone_number">Phone Number:</label>
+                <input type="text" id="phone_number" name="phone_number">
+                </br>
+                <br>
+                <label for="linkedin">LinkedIn:</label>
+                <input type="text" id="linkedin" name="linkedin">
+                </br>
+                <br>
+                <label for="github">GitHub:</label>
+                <input type="text" id="github" name="github">
+                </br>
+                <br></br>
+                <br>
+<!--================= SKILLS PORTION ============================================= -->
+                <h3>What skills are you knowledgeable in?</h3>
+                <br>
+                <div class="form-group">
+                    <input type="checkbox" name="CSS">
+                    CSS
+                    <input type="checkbox" name="HTML">
+                    HTML
+                    <input type="checkbox" name="Ruby_Rails">
+                    Ruby on Rails
+                    <input type="checkbox" name="Java">
+                    Java
+                    <input type="checkbox" name="Javascript">
+                    Javascript
+                    <input type="checkbox" name="MySQL">
+                    MySQL
+                    <input type="checkbox" name="React">
+                    React
+                    <input type="checkbox" name="PHP">
+                    PHP
+                    <input type="checkbox" name="Groovy_Grails">
+                    Groovy on Grails
+                    <input type="checkbox" name="C_plus_plus">
+                    C++
+                    </br> 
+                    <br>
+                    Others:
+                    <input type="text" name="others">
+                    </br>
+                 </div>
+            </div>
+            <button type="submit">Add Info</button>
+        </form>
+    </fieldset> 
 
-    <!--BRIAN UPDATE HERE===================================================================-->
-    <!-- I changed all of the actions for this form, method PUT is for updating, we are creating new items in the db. Update functionality if for future development of the project -->
-    <form class="create-update-form" action="/createSkills" method="POST">
+    <fieldset><!--groups the personality quiz together-->
+    	<h2>Tell us a little about you and your work style.</h2> <!--This needs reworded -->
 
-        <div class="form-group">
-
-            <br>
-            <label for="first_name">First Name:</label>
-            <input type="text" id="first_name" name="first_name">
-            </br>
-            <br>
-            <label for="last_name">Last Name:</label>
-            <input type="text" id="last_name" name="last_name">
-            </br>
-            <br>
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email">
-            </br>
-            <br>
-            <label for="address">Address:</label>
-            <input type="text" id="address" name="address">
-            </br>
-            <br>
-            <label for="phone_number">Phone Number:</label>
-            <input type="text" id="phone_number" name="phone_number">
-            </br>
-            <br>
-            <label for="linkedin">LinkedIn:</label>
-            <input type="text" id="linkedin" name="linkedin">
-            </br>
-            <br>
-            <label for="github">GitHub:</label>
-            <input type="text" id="github" name="github">
-            </br>
-            <br></br>
-            <!-- SKILLS ======================================================================= -->
-            <br>
-            <h3>What skills are you knowledgeable in?</h3>
-            <br>
-            <input type="checkbox" name="CSS">
-            CSS
-            <input type="checkbox" name="HTML">
-            HTML
-            <input type="checkbox" name="Ruby_Rails">
-            Ruby on Rails
-            <input type="checkbox" name="Java">
-            Java
-            <input type="checkbox" name="Javascript">
-            Javascript
-            <input type="checkbox" name="MySQL">
-            MySQL
-            <input type="checkbox" name="React">
-            React
-            <input type="checkbox" name="PHP">
-            PHP
-            <input type="checkbox" name="Groovy_Grails">
-            Groovy on Grails
-            <input type="checkbox" name="C_plus_plus">
-            C++
-            </br> 
-            <br>
-            Others:
-            <input type="text" name="others">
-            </br>
-            <br></br>
-            <!-- Personality Questions ======================================== -->
-            <fieldset><!--groups the personality quiz together-->
-                <h2>Tell us a little about you and your work style.</h2> <!--This needs reworded -->
-
-                <h3>I enjoy collaborating with a team.</h3>
-                    <select data-placeholder="" class="chosen-select" id="q1">
-                        <option value=""></option>
-                        <option value="2">Not like me at all</option>
-                        <option value="4">A little like me</option>
-                        <option value="6">Somewhat like me</option>
-                        <option value="8">A lot like me</option>
-                        <option value="10">Exactly like me</option> 
-                    </select>
-                    <h3>I do my best work under pressure.</h3>
-                    <select data-placeholder="" class="chosen-select" id="q2">
-                        <option value=""></option>
-                        <option value="2">Not like me at all</option>
-                        <option value="4">A little like me</option>
-                        <option value="6">Somewhat like me</option>
-                        <option value="8">A lot like me</option>
-                        <option value="10">Exactly like me</option> 
-                    </select>
-                    <h3>I use established systems and routines to complete tasks.</h3>
-                    <select data-placeholder="" class="chosen-select" id="q3">
-                        <option value=""></option>
-                        <option value="2">Not like me at all</option>
-                        <option value="4">A little like me</option>
-                        <option value="6">Somewhat like me</option>
-                        <option value="8">A lot like me</option>
-                        <option value="10">Exactly like me</option> 
-                    </select>
-                        <h3>It's hard for me to take time for leisure when there's still work to do.</h3>
-                    <select data-placeholder="" class="chosen-select" id="q4">
-                        <option value=""></option>
-                        <option value="10">Not like me at all</option>
-                        <option value="8">A little like me</option>
-                        <option value="6">Somewhat like me</option>
-                        <option value="4">A lot like me</option>
-                        <option value="2">Exactly like me</option> 
-                    </select>
-                        <h3>I enjoy mentoring other team members.</h3>
-                    <select data-placeholder="" class="chosen-select" id="q5">
-                        <option value=""></option>
-                        <option value="2">Not like me at all</option>
-                        <option value="4">A little like me</option>
-                        <option value="6">Somewhat like me</option>
-                        <option value="8">A lot like me</option>
-                        <option value="10">Exactly like me</option>  
-                    </select>
-                    <h3>I have trouble telling my colleagues "no".</h3>
-                    <select data-placeholder="" class="chosen-select" id="q6">
-                        <option value=""></option>
-                        <option value="10">Not like me at all</option>
-                        <option value="8">A little like me</option>
-                        <option value="6">Somewhat like me</option>
-                        <option value="4">A lot like me</option>
-                        <option value="2">Exactly like me</option> 
-                    </select>
-                    <h3>When I brainstorm, I talk to others about my ideas.</h3>
-                    <select data-placeholder="" class="chosen-select" id="q7">
-                        <option value=""></option>
-                        <option value="2">Not like me at all</option>
-                        <option value="4">A little like me</option>
-                        <option value="6">Somewhat like me</option>
-                        <option value="8">A lot like me</option>
-                        <option value="10">Exactly like me</option> 
-                    </select>
-                    <h3>I focus best alone in a room.</h3>
-                    <select data-placeholder="" class="chosen-select" id="q8">
-                        <option value=""></option>
-                        <option value="10">Not like me at all</option>
-                        <option value="8">A little like me</option>
-                        <option value="6">Somewhat like me</option>
-                        <option value="4">A lot like me</option>
-                        <option value="2">Exactly like me</option> 
-                    </select>
-                    <h3>I'm comfortable receiving constructive feedback.</h3>
-                    <select data-placeholder="" class="chosen-select" id="q9">
-                    <option value=""></option>
-                        <option value="2">Not like me at all</option>
-                        <option value="4">A little like me</option>
-                        <option value="6">Somewhat like me</option>
-                        <option value="8">A lot like me</option>
-                        <option value="10">Exactly like me</option> 
-                    </select>
-                    <h3>I enjoy building relationships with my team members. </h3>
-                    <select data-placeholder="" class="chosen-select" id="q10">
-                        <option value=""></option>
-                        <option value="2">Not like me at all</option>
-                        <option value="4">A little like me</option>
-                        <option value="6">Somewhat like me</option>
-                        <option value="8">A lot like me</option>
-                        <option value="10">Exactly like me</option> 
-                    </select>
-            </fieldset>
-        </div>
-        <input type="submit" id="submit" value="Submit Info">
-    </form>
- 
+    	<h3>I enjoy collaborating with a team.</h3>
+    	 	<select data-placeholder="" class="chosen-select" id="q1">
+    	 		<option value=""></option>
+                <option value="2">Not like me at all</option>
+                <option value="4">A little like me</option>
+                <option value="6">Somewhat like me</option>
+                <option value="8">A lot like me</option>
+                <option value="10">Exactly like me</option> 
+           	</select>
+        	<h3>I do my best work under pressure.</h3>
+    	 	<select data-placeholder="" class="chosen-select" id="q2">
+    	 		<option value=""></option>
+                <option value="2">Not like me at all</option>
+                <option value="4">A little like me</option>
+                <option value="6">Somewhat like me</option>
+                <option value="8">A lot like me</option>
+                <option value="10">Exactly like me</option> 
+           	</select>
+           	<h3>I use established systems and routines to complete tasks.</h3>
+    	 	<select data-placeholder="" class="chosen-select" id="q3">
+    	 		<option value=""></option>
+                <option value="2">Not like me at all</option>
+                <option value="4">A little like me</option>
+                <option value="6">Somewhat like me</option>
+                <option value="8">A lot like me</option>
+                <option value="10">Exactly like me</option> 
+           	</select>
+           		<h3>It's hard for me to take time for leisure when there's still work to do.</h3>
+    	 	<select data-placeholder="" class="chosen-select" id="q4">
+    	 		<option value=""></option>
+                <option value="10">Not like me at all</option>
+                <option value="8">A little like me</option>
+                <option value="6">Somewhat like me</option>
+                <option value="4">A lot like me</option>
+                <option value="2">Exactly like me</option> 
+           	</select>
+           		<h3>I enjoy mentoring other team members.</h3>
+    	 	<select data-placeholder="" class="chosen-select" id="q5">
+    	 		<option value=""></option>
+                <option value="2">Not like me at all</option>
+                <option value="4">A little like me</option>
+                <option value="6">Somewhat like me</option>
+                <option value="8">A lot like me</option>
+                <option value="10">Exactly like me</option>  
+           	</select>
+           	<h3>I have trouble telling my colleagues "no".</h3>
+    	 	<select data-placeholder="" class="chosen-select" id="q6">
+    	 		<option value=""></option>
+                <option value="10">Not like me at all</option>
+                <option value="8">A little like me</option>
+                <option value="6">Somewhat like me</option>
+                <option value="4">A lot like me</option>
+                <option value="2">Exactly like me</option> 
+           	</select>
+           	<h3>When I brainstorm, I talk to others about my ideas.</h3>
+    	 	<select data-placeholder="" class="chosen-select" id="q7">
+    	 		<option value=""></option>
+                <option value="2">Not like me at all</option>
+                <option value="4">A little like me</option>
+                <option value="6">Somewhat like me</option>
+                <option value="8">A lot like me</option>
+                <option value="10">Exactly like me</option> 
+           	</select>
+           	<h3>I focus best alone in a room.</h3>
+    	 	<select data-placeholder="" class="chosen-select" id="q8">
+    	 		<option value=""></option>
+                <option value="10">Not like me at all</option>
+                <option value="8">A little like me</option>
+                <option value="6">Somewhat like me</option>
+                <option value="4">A lot like me</option>
+                <option value="2">Exactly like me</option> 
+           	</select>
+           	<h3>I'm comfortable receiving constructive feedback.</h3>
+    	 	<select data-placeholder="" class="chosen-select" id="q9">
+    	 	<option value=""></option>
+                <option value="2">Not like me at all</option>
+                <option value="4">A little like me</option>
+                <option value="6">Somewhat like me</option>
+                <option value="8">A lot like me</option>
+                <option value="10">Exactly like me</option> 
+           	</select>
+           	<h3>I enjoy building relationships with my team members. </h3>
+    	 	<select data-placeholder="" class="chosen-select" id="q10">
+    	 		<option value=""></option>
+                <option value="2">Not like me at all</option>
+                <option value="4">A little like me</option>
+                <option value="6">Somewhat like me</option>
+                <option value="8">A lot like me</option>
+                <option value="10">Exactly like me</option> 
+           	</select>
+           	
+    	</fieldset>
+<!--=====================end of personality questions===================-->
 
 
-
-    <!--BRIAN UPDATE HERE===================================================================-->
-   <!--  <form class="create-update-form" action="/createSkills" method="POST">
-
-        <br>
-        <h3>What skills are you knowledgeable in?</h3>
-        <br>
-        <div class="form-group">
-            <input type="checkbox" name="CSS">
-            CSS
-            <input type="checkbox" name="HTML">
-            HTML
-            <input type="checkbox" name="Ruby_Rails">
-            Ruby on Rails
-            <input type="checkbox" name="Java">
-            Java
-            <input type="checkbox" name="Javascript">
-            Javascript
-            <input type="checkbox" name="MySQL">
-            MySQL
-            <input type="checkbox" name="React">
-            React
-            <input type="checkbox" name="PHP">
-            PHP
-            <input type="checkbox" name="Groovy_Grails">
-            Groovy on Grails
-            <input type="checkbox" name="C_plus_plus">
-            C++
-            </br> 
-            <br>
-            Others:
-            <input type="text" name="others">
-            </br>
-         </div>  
-        <button type="submit">Add Skills</button>
-     
-    </form> -->
-            
-
-	</fieldset> 
-
-	<!-- <fieldset> --><!--groups the personality quiz together-->
-	<!-- <h2>Tell us a little about you and your work style.</h2> --> <!--This needs reworded -->
-<!-- 
-	<h3>I enjoy collaborating with a team.</h3>
-	 	<select data-placeholder="" class="chosen-select" id="q1">
-	 		<option value=""></option>
-            <option value="2">Not like me at all</option>
-            <option value="4">A little like me</option>
-            <option value="6">Somewhat like me</option>
-            <option value="8">A lot like me</option>
-            <option value="10">Exactly like me</option> 
-       	</select>
-    	<h3>I do my best work under pressure.</h3>
-	 	<select data-placeholder="" class="chosen-select" id="q2">
-	 		<option value=""></option>
-            <option value="2">Not like me at all</option>
-            <option value="4">A little like me</option>
-            <option value="6">Somewhat like me</option>
-            <option value="8">A lot like me</option>
-            <option value="10">Exactly like me</option> 
-       	</select>
-       	<h3>I use established systems and routines to complete tasks.</h3>
-	 	<select data-placeholder="" class="chosen-select" id="q3">
-	 		<option value=""></option>
-            <option value="2">Not like me at all</option>
-            <option value="4">A little like me</option>
-            <option value="6">Somewhat like me</option>
-            <option value="8">A lot like me</option>
-            <option value="10">Exactly like me</option> 
-       	</select>
-       		<h3>It's hard for me to take time for leisure when there's still work to do.</h3>
-	 	<select data-placeholder="" class="chosen-select" id="q4">
-	 		<option value=""></option>
-            <option value="10">Not like me at all</option>
-            <option value="8">A little like me</option>
-            <option value="6">Somewhat like me</option>
-            <option value="4">A lot like me</option>
-            <option value="2">Exactly like me</option> 
-       	</select>
-       		<h3>I enjoy mentoring other team members.</h3>
-	 	<select data-placeholder="" class="chosen-select" id="q5">
-	 		<option value=""></option>
-            <option value="2">Not like me at all</option>
-            <option value="4">A little like me</option>
-            <option value="6">Somewhat like me</option>
-            <option value="8">A lot like me</option>
-            <option value="10">Exactly like me</option>  
-       	</select>
-       	<h3>I have trouble telling my colleagues "no".</h3>
-	 	<select data-placeholder="" class="chosen-select" id="q6">
-	 		<option value=""></option>
-            <option value="10">Not like me at all</option>
-            <option value="8">A little like me</option>
-            <option value="6">Somewhat like me</option>
-            <option value="4">A lot like me</option>
-            <option value="2">Exactly like me</option> 
-       	</select>
-       	<h3>When I brainstorm, I talk to others about my ideas.</h3>
-	 	<select data-placeholder="" class="chosen-select" id="q7">
-	 		<option value=""></option>
-            <option value="2">Not like me at all</option>
-            <option value="4">A little like me</option>
-            <option value="6">Somewhat like me</option>
-            <option value="8">A lot like me</option>
-            <option value="10">Exactly like me</option> 
-       	</select>
-       	<h3>I focus best alone in a room.</h3>
-	 	<select data-placeholder="" class="chosen-select" id="q8">
-	 		<option value=""></option>
-            <option value="10">Not like me at all</option>
-            <option value="8">A little like me</option>
-            <option value="6">Somewhat like me</option>
-            <option value="4">A lot like me</option>
-            <option value="2">Exactly like me</option> 
-       	</select>
-       	<h3>I'm comfortable receiving constructive feedback.</h3>
-	 	<select data-placeholder="" class="chosen-select" id="q9">
-	 	<option value=""></option>
-            <option value="2">Not like me at all</option>
-            <option value="4">A little like me</option>
-            <option value="6">Somewhat like me</option>
-            <option value="8">A lot like me</option>
-            <option value="10">Exactly like me</option> 
-       	</select>
-       	<h3>I enjoy building relationships with my team members. </h3>
-	 	<select data-placeholder="" class="chosen-select" id="q10">
-	 		<option value=""></option>
-            <option value="2">Not like me at all</option>
-            <option value="4">A little like me</option>
-            <option value="6">Somewhat like me</option>
-            <option value="8">A lot like me</option>
-            <option value="10">Exactly like me</option> 
-       	</select>
-       	
-	</fieldset> --><!--end of personality questions-->
-<!--BRIAN UPDATE HERE===================================================================-->
-<!-- This the below going to be a new table ?  -->
-    <!-- <form class="create-update-form" action="/createSkills" method="POST">
-    <div class="form-group">
-            <br>
-            <h3>What do you value in a workplace culture?</h3>
-            <br>
-            <input type="checkbox" name="skills" value="high energy">
-            High Energy
-            <input type="checkbox" name="skills" value="no mediocrity">
-            Intolerance for Mediocrity
-            <input type="checkbox" name="skills" value="remote work">
-            Remote Work Availability
-            <input type="checkbox" name="skills" value="flex schedule">
-            Flexible Schedule
-            <input type="checkbox" name="skills" value="learn opportunities">
-            Opportunities to Learn and Grow
-            <input type="checkbox" name="skills" value="permanent">
-            Permanent Position
-            <input type="checkbox" name="skills" value="contract">
-            Contract or Temporary Work
-            <input type="checkbox" name="skills" value="individual space">
-            Individual Work Space
-            <input type="checkbox" name="skills" value="social">
-            Social Team Building Opportunities
-            <input type="checkbox" name="skills" value="consistent">
-            Consistent Feedback
-            <input type="checkbox" name="skills" value="equity driven">
-            Equity Driven
-            <input type="checkbox" name="skills" value="work life balance">
-            Work Life Balance
-            </br>
-            </form>
-            </div> -->
-
-
-<!-- 	<input type="submit" id="submit" value="Submit Info">
- -->	<!-- </form> -->
-	</div><!--end of info div-->
-
+	<input type="submit" id="submit" value="Submit Personality Test">
+<!--  </div>end of info div
+ -->
 </div><!--end of main div-->
 <!-- <button type="submit">Submit Info</button> -->
 

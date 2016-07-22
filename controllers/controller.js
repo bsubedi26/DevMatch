@@ -132,22 +132,22 @@ module.exports = function(app){
    	/*This route is just grabbing the actual user data (skills and culture quiz data)*/
    	app.post('/createSkills', function(req, res){
    			console.log("Hello " + req.body.CSS);
-   		orm.addSkillsToDB('skills', req.body.CSS, req.body.HTML, req.body.Ruby_Rails, req.body.Java, req.body.Javascript, req.body.MySQL, req.body.React, req.body.PHP, req.body.Groovy_Grails, req.body.C_plus_plus, req.body.others, req.body.personality_type).then(function(data){
+   		orm.addSkillsToDB('skills', req.body.first_name, req.body.last_name, req.body.email, req.body.address, req.body.phone_number, req.body.linkedin, req.body.github, req.body.CSS, req.body.HTML, req.body.Ruby_Rails, req.body.Java, req.body.Javascript, req.body.MySQL, req.body.React, req.body.PHP, req.body.Groovy_Grails, req.body.C_plus_plus, req.body.others).then(function(data){
    			console.log("Please not be undefined " + data);
-   			//res.redirect('/')
+   			//res.redirect('/apps')
    		})
    	});
 
    	//=======================Need app.post
-	// app.post('/score', function(req, res) {
- //    		console.log(req.body.personWayOfLife);
- //    	orm.addScoreToDB('skills', req.body.personWayOfLife).then(function(data){
- //    		console.log(data);
- //    	})
- //        //if (err) throw err;
- //        //res.redirect('/');
- //    });
-//});
+	app.post('/score', function(req, res) {
+    		console.log("YO YO BRO" + req.body.personality_type);
+    	orm.addScoreToDB('scores', req.body.personality_type).then(function(data){
+    		console.log(data);
+    	})
+        //if (err) throw err;
+        //res.redirect('/');
+    });
+// });
 //============================BASIC ROUTES=========================================================================	
 //============================NOTES BELOW====================================
 //need to display all applicant data for the recruiter

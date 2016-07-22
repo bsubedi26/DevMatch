@@ -22,7 +22,7 @@ var orm = {
 	   //      });
     // 	});
     // },
-    addSkillsToDB: function(table, CSS, HTML, Ruby_Rails, Java, Javascript, MySQL, React, PHP, Groovy_Grails, C_plus_plus, others, personality_type) {
+    addSkillsToDB: function(table, first_name, last_name, email, address, phone_number, linkedin, github, CSS, HTML, Ruby_Rails, Java, Javascript, MySQL, React, PHP, Groovy_Grails, C_plus_plus, others) {
     	console.log('looking for ' + CSS + " " + HTML);
     	return new Promise(function(resolve, reject){
     		if (CSS == null) {
@@ -76,21 +76,21 @@ var orm = {
     			C_plus_plus = "true"
     		}
     		var queryString = 'INSERT INTO ' + table + ' SET ?';
-    		connection.query(queryString, {CSS: CSS, HTML: HTML, Ruby_Rails: Ruby_Rails, Java: Java, Javascript: Javascript, MySQL: MySQL, React: React, PHP: PHP, Groovy_Grails: Groovy_Grails, C_plus_plus: C_plus_plus, others: others, personality_type: personality_type}, function(err, result){
+    		connection.query(queryString, {first_name: first_name, last_name: last_name, email: email, address: address, phone_number: phone_number, linkedin: linkedin, github: github, CSS: CSS, HTML: HTML, Ruby_Rails: Ruby_Rails, Java: Java, Javascript: Javascript, MySQL: MySQL, React: React, PHP: PHP, Groovy_Grails: Groovy_Grails, C_plus_plus: C_plus_plus, others: others}, function(err, result){
     			if (err) throw err;
     			resolve(result);
     		});
     	});
     },
-    // addScoreToDB: function(table, scoreResult) {
-    // 	return new Promise(function(resolve, reject){
-    // 		var queryString = 'INSERT INTO ' + table + ' (personality_type) VALUES (?)';
-    // 		connection.query(queryString, [scoreResult], function(err, result){
-    // 			if (err) throw err;
-    // 			resolve(result);
-    // 		});
-    // 	});
-    // },
+    addScoreToDB: function(table, scoreResult) {
+    	return new Promise(function(resolve, reject){
+    		var queryString = 'INSERT INTO ' + table + ' (personality_type) VALUES (?)';
+    		connection.query(queryString, [scoreResult], function(err, result){
+    			if (err) throw err;
+    			resolve(result);
+    		});
+    	});
+    },
     // un .then versions, will switch above
 
   // findUser: function(username, callback) {

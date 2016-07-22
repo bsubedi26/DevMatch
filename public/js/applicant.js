@@ -52,7 +52,7 @@ if (score >= 75) {
             style = 'Prefers working independently';
            };
 //================================The posts to server side====================================
-$.post('/createSkills', {personality_type: style});
+$.post('/score', {personality_type: style});
 
    //jQuery verison - will delete once lodash works 100%
 	
@@ -100,6 +100,7 @@ $.post('/createSkills', {personality_type: style});
 	//return false
 	});//end of form validation
 	
-});//
+});
+//
 	//end of submit onclick
  //end of document ready
