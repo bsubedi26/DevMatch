@@ -3,7 +3,7 @@
 
 //submit button function to capture user info and calculate personality match
 
-$( "#submit" ).click(function(){
+$( "#personality_submit" ).click(function(){
 //form validation function
 // function validateForm() {
 // 		  var isValid = true;
