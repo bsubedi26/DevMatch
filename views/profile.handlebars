@@ -1,2 +1,10 @@
-<h1>Hello, {{user.username}}</h1>
-<a href="/logout_github"> <button class="btn"> Logout </button></a>
+{{!-- Added padding to the body to prevent the nav bar from overlapping with body content --}}
+<link href="css/login_style.css" rel="stylesheet">
+
+<div class="container text-center">
+	<h1>Congratulations, {{user.username}}!</h1>
+	<h2>You're logged in with your Github Account.</h2>
+	<a href="/apps"><button class="btn btn-lg btn-primary">Fill out these forms to take the Applicant Quiz!</button></a>
+	<br>
+	{{!-- <a href="/logout_github"> <button class="btn"> Logout </button></a> --}}
+</div>
