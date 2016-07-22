@@ -53,6 +53,11 @@
         applicantMatch: function(whatToSelect, colToSearch, valOfCol){
 
             //loops for skills that are valued as true
+
+            //For whatever reason this file is not reading my js. I spoke to Sean about it and he said to keep my js within this file but we can always create a file for the js if you want.
+            // I slacked Sean and Victor my code and waiting on them to see if it's correct.
+            //If you see something that could be changed then change it or let me know and I can work on it when I get off of work tonight
+
             var queryString = 'SELECT * FROM' + users + ' WHERE ' + skills + ' = true';
             connection.query(queryString, [valOfCol], function(err, result) {
                 console.log(result);
