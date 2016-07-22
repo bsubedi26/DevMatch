@@ -1,11 +1,8 @@
-$(document).ready(function(){
+ $(document).ready(function(){
 
-var style;
-var answers;
-var score;
-var total;
 
 //submit button function to capture user info and calculate personality match
+
 $( "#submit" ).click(function(){
 //form validation function
 // function validateForm() {
@@ -54,8 +51,6 @@ if (score >= 75) {
         } else {
             style = 'Prefers working independently';
            };
-         return style;
-
 //================================The posts to server side====================================
 $.post('/score', {personality_type: style});
 
@@ -104,5 +99,8 @@ $.post('/score', {personality_type: style});
 	//}
 	//return false
 	});//end of form validation
-}); //end of document ready function
-
+	
+});
+//
+	//end of submit onclick
+ //end of document ready
