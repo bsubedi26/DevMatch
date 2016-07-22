@@ -108,7 +108,8 @@ module.exports = function(app) {
 			message: req.flash('error')[0],
 			otherAction: "register",
 			action: "Sign in",
-			alternative: "Create account"
+			alternative: "Create account",
+			github: true
 		});
 	});
 
