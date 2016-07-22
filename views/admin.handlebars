@@ -56,6 +56,7 @@
             var queryString = 'SELECT * FROM' + users + ' WHERE ' + skills + ' = true';
             connection.query(queryString, [valOfCol], function(err, result) {
                 console.log(result);
+                res.render({users.skills : data});
             )};
         };
 

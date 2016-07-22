@@ -6,4 +6,4 @@ $("#submitAdmin").on("click", function() {
 	else {
 		var alert = $("body").prepend('<div class=" text-center alert alert-danger"><strong>Wrong Admin Username/Password!</strong></div>')
 	}
-})
+});
