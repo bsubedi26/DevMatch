@@ -1,0 +1,17 @@
+.font-header {
+	position: relative;
+	bottom: 200px;
+}
+
+.button-header {
+	position: relative;
+	bottom: 200px;
+}
+
+.navbar-collapse ul li {
+	font-size: 18px;
+}
+
+.text-muted {
+	font-size: 14px;
+}
