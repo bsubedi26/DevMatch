@@ -13,14 +13,31 @@ var orm = {
 	   //      });
     // 	});
     // },
-    // addUserToDB: function(table) {
-    // 	return new Promise(function(resolve, reject) {
-	   //      var queryString = 'INSERT INTO' + table + '(first_name, last_name, email, address, phone_number, linkedin, github) VALUES (?, ?, ?, ?, ?, ?, ?)';
-	   //      connection.query(queryString, [req.body.first_name, req.body.last_name, req.body.email, req.body.address, req.body.phone_number, req.body.linkedin, req.body.github], function(err, result) {
-	   //          resolve(result);
-	   //      });
-    // 	});
-    // },
+    selectAll: function(table) {
+    	return new Promise(function(resolve, reject) {
+	        // var queryString = 'SELECT * FROM' + table + 'A LEFT JOIN skills B ON A.Key = B.Key';
+
+    		//may need to do A.ID instead of A.Key format
+	        var queryString = 'SELECT * FROM' + table + 'A LEFT JOIN skills B ON A.ID = B.ID';
+
+	        connection.query(queryString, function(err, result) {
+	            if (err) throw err;
+              resolve(result);
+	        });
+    	});
+    },
+    addUserToDB: function (userObj, callback) {
+	    connection.query('INSERT INTO users_table SET ?', userObj, function(err, results) {
+	    if (err) return callback(false, err);
+	    callback(true, null);
+	    });
+	  },
+	
+    findUser: function(username, callback) {
+	    connection.query('SELECT * FROM users_table WHERE ?', {username: username}, function(err, user) {
+	    callback(err, user);
+	    })
+	  },
     addSkillsToDB: function(table, first_name, last_name, email, address, phone_number, linkedin, github, CSS, HTML, Ruby_Rails, Java, Javascript, MySQL, React, PHP, Groovy_Grails, C_plus_plus, others) {
     	console.log('looking for ' + CSS + " " + HTML);
     	return new Promise(function(resolve, reject){
