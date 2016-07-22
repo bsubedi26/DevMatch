@@ -1,5 +1,6 @@
 //If admin login username and password are admin, allow access to /admin
-$("#submitAdmin").on("click", function() {
+$("#submitAdmin").on("click", function(e) {
+	e.preventDefault();
 	if ($("#adminname").val() === 'admin' && $("#password").val() === 'admin') {
 		$(location).attr('href', '/admin')
 	}
