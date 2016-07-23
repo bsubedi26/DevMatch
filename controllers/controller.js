@@ -150,10 +150,12 @@ module.exports = function(app) {
    	});
 
    	app.get('/admin', function(req, res) {
-   		orm.viewAll('users').then(function(data){
+   		orm.viewAll('skills').then(function(data){
    			console.log(data);
-   			res.render('admin', data)
-   		})
+   			res.render('admin', {
+   				skills: data
+   			});
+   		});
    	});
 
 	app.get('/adminLogin', function(req,res) {
