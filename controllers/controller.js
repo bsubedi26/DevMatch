@@ -164,6 +164,16 @@ module.exports = function(app) {
 			message: req.flash('error')[0]
 		});
    	})
+   	
+   	// Get user info for admin page when table row is clicked
+   	app.get('/userInfo/:id', function(req,res) {
+   		var userID = req.params.id;
+   		console.log(userID);
+   		orm.userInfo(userID).then(function(data) {
+   			console.log(data)
+   			res.send(data);
+   		});
+   	})
 
    	app.get('/applicant2', function(req,res) {
    		res.render('applicant2');
