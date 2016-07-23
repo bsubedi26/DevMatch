@@ -2,41 +2,60 @@
 
 <p>Browse Applicants</p>
 <style>
-ul#menu li {
-    display:inline;
+tr#table th {
+    padding-right: 20px;
 }
 </style>
-<ul id="menu">
-  {{#each skills}}
-      <li>{{this.id}}</li>
-      <li>First Name: {{this.first_name}}</li>
-      <li>Last Name: {{this.last_name}}</li>
-      <li>Email: {{this.email}}</li>
-      <li>Address: {{this.address}}</li>
-      <li>Phone Number: {{this.phone_number}}</li>
-      <li>Linkedin: {{this.linkedin}}</li>
-      <li>Github: {{this.github}}</li>
-      <li>CSS?: {{this.CSS}}</li>
-      <li>HTML?: {{this.HTML}}</li>
-      <li>Ruby Rails?: {{this.Ruby_Rails}}</li>
-      <li>Java?: {{this.Java}}</li>
-      <li>Javascript?: {{this.Javascript}}</li>
-      <li>MySQL?: {{this.MySQL}}</li>
-      <li>React?: {{this.React}}</li>
-      <li>PHP?: {{this.PHP}}</li>
-      <li>Groovy Grails?: {{this.Groovy_Grails}}</li>
-      <li>C++ ?: {{this.C_plus_plus}}</li>
-      <li>Others: {{this.others}}</li>
-      <li>Personality Type: {{this.personality_type}}</li>
-      <br>
-      <br>
-<!-- ===============WIll add personality type later....need JOIN for that -->
-
-    <!--   <form action="/delete?_method=DELETE" method="POST">
-        <input type="hidden" name="id" value="{{this.id}}">
-        <button type="submit">Delete</button>
-      </form>
-
-      <a href="/quotes/{{this.id}}">Update this quote</a> -->
+<table id="table" width="100%">
+    <tr>
+      <th>Applicant ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <!-- <th>Email</th> -->
+      <!-- <th>Address</th> -->
+      <!-- <th>Phone Number</th> -->
+      <!-- <th>Linkedin</th> -->
+      <!-- <th>Github</th> -->
+      <th>CSS</th>
+      <th>HTML</th>
+      <th>Ruby Rails</th>
+      <th>Java</th>
+      <th>Javascript</th>
+      <th>MySQL</th>
+      <th>React</th>
+      <th>PHP</th>
+      <th>Groovy Grails</th>
+      <th>C++</th>
+      <th>others</th>
+      <th>Personality Type</th>
+    </tr>
+      {{#each skills}}
+    <tr>
+      <td>{{this.id}}</th>
+      <th>{{this.first_name}}</th>
+      <th>{{this.last_name}}</th>
+      <!-- <th>{{this.email}}</th> -->
+    
+      <!-- <td>{{this.address}}</td> -->
+      <!-- <td>{{this.phone_number}}</td> -->
+      <!-- <td>{{this.linkedin}}</td> -->
+      <!-- <td>{{this.github}}</td> -->
+  
+      <td>{{this.CSS}}</td>
+      <td>{{this.HTML}}</td>
+      <td>{{this.Ruby_Rails}}</td>
+      <td>{{this.Java}}</td>
+      <td>{{this.Javascript}}</td>
+      <td>{{this.MySQL}}</td>
+      <td>{{this.React}}</td>
+      <td>{{this.PHP}}</td>
+      <td>{{this.Groovy_Grails}}</td>
+      <td>{{this.C_plus_plus}}</td>
+      <td>{{this.others}}</td>
+      <td>{{this.personality_type}}</td>
+    </tr>
+     
   {{/each}}
-</ul>
+</table>
+
+
