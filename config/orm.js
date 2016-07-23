@@ -5,14 +5,14 @@ var connection = require('../config/connection.js');
 var orm = {
 
      viewAll: function(table) {
-     	return new Promise(function(resolve, reject) {
-     		//may need to do A.ID instead of A.Key format
-	         var queryString = 'SELECT * FROM ' + table + ' A LEFT JOIN skills B ON A.ID = B.ID';
-	         connection.query(queryString, function(err, result) {
-	             resolve(result);
-	         });
-     	});
-     },
+    	return new Promise(function(resolve, reject) {
+    		//may need to do A.ID instead of A.Key format, 'SELECT * FROM ' + table + ' A LEFT JOIN skills B ON A.ID = B.ID'
+	        var queryString = 'SELECT * FROM ' + table + ' A LEFT JOIN scores B ON A.id = B.id';
+	        connection.query(queryString, function(err, result) {
+	            resolve(result);
+	        });
+    	});
+    },
     //selectAll: function(table) {
     //	return new Promise(function(resolve, reject) {
 	   //     // var queryString = 'SELECT * FROM' + table + 'A LEFT JOIN skills B ON A.Key = B.Key';
