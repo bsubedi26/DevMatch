@@ -107,6 +107,16 @@ var orm = {
     		});
     	});
     },
+    
+    userInfo: function(id) {
+        return new Promise(function(resolve,reject) {
+            var queryString = 'SELECT * FROM skills WHERE id = ?';
+            connection.query(queryString, [id], function(err, result){
+                if (err) throw err;
+                resolve(result);
+        })
+    })
+},
     // un .then versions, will switch above
 
   // findUser: function(username, callback) {
