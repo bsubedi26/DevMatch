@@ -1,87 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<h1>Recruiters Page</h1>
 
-    {{!-- Added padding to the body to prevent the nav bar from overlapping with body content --}}
-    <link href="css/login_style.css" rel="stylesheet">
-
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-
-    {{!-- Bootstrap CSS CDN --}}
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
-
-    <title>DevMatch</title>
-    {{!-- Import header partials --}}
-    {{>header}}
-</head>
-<body>
-
-    {{!-- Main body content --}}
-    {{{ body }}}
-
-
-
-    <h1>Welcome Recruiters!!</h1>
-
-    <h2>Applicants Stored In the Database:</h2>
-
-    <h3>Search for potential applicants</h3>
-
-    //start of search form
-    <form class="create-form" method="POST">
-        <div class="form-group">
-            <label for="search">Applicants:</label>
-            <input type="text" id="search" name="skills" value="{{users.skills}}"></input>
-        </div>
-
-        <button type="submit">Search</button>
-    </form>
-
-
-    //page loads with the names of the applicants based on their score
-    {{!-- JQuery CDN --}}
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    {{!-- Bootstrap JS CDN --}}
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    {{!-- Applicant.handlebars script file --}}
-    <script src="/js/applicant.js"></script>
-
-        //loops through the users in the db
-        applicantMatch: function(whatToSelect, colToSearch, valOfCol){
-
-            //loops for skills that are valued as true
-
-            //For whatever reason this file is not reading my js. I spoke to Sean about it and he said to keep my js within this file but we can always create a file for the js if you want.
-            // I slacked Sean and Victor my code and waiting on them to see if it's correct.
-            //If you see something that could be changed then change it or let me know and I can work on it when I get off of work tonight
-
-            var queryString = 'SELECT * FROM' + users + ' WHERE ' + skills + ' = true';
-            connection.query(queryString, [valOfCol], function(err, result) {
-                console.log(result);
-                res.render({users.skills : data});
-            )};
-        };
-
-
-        <ul>
-            {{#each users}}
-                <li>
-                    <p><span class="label">First Name:</span> {{this.first_name}}</p>
-                    <p><span class="label">Last Name:</span> {{this.last_name}}</p>
-                    <p><span class="label">Personality Type:</span> {{this.personality_type}}</p>
-                </li>
-            {{/each}}
-         </ul>
-        }
-        }
-    };
-
-
-    {{!-- Import footer partials --}}
-    {{>footer}}
-</body>
-</html>
-
+<p>Browse Applicants</p>
+<style>
+tr#table th {
+    padding-right: 20px;
+}
+</style>
+<table id="table" width="100%">
+    <tr>
+      <th>Applicant ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <!-- <th>Email</th> -->
+      <!-- <th>Address</th> -->
+      <!-- <th>Phone Number</th> -->
+      <!-- <th>Linkedin</th> -->
+      <!-- <th>Github</th> -->
+      <th>CSS</th>
+      <th>HTML</th>
+      <th>Ruby Rails</th>
+      <th>Java</th>
+      <th>Javascript</th>
+      <th>MySQL</th>
+      <th>React</th>
+      <th>PHP</th>
+      <th>Groovy Grails</th>
+      <th>C++</th>
+      <th>others</th>
+      <th>Personality Type</th>
+    </tr>
+      {{#each skills}}
+    <tr>
+      <td>{{this.id}}</th>
+      <th>{{this.first_name}}</th>
+      <th>{{this.last_name}}</th>
+      <!-- <th>{{this.email}}</th> -->
+    
+      <!-- <td>{{this.address}}</td> -->
+      <!-- <td>{{this.phone_number}}</td> -->
+      <!-- <td>{{this.linkedin}}</td> -->
+      <!-- <td>{{this.github}}</td> -->
+  
+      <td>{{this.CSS}}</td>
+      <td>{{this.HTML}}</td>
+      <td>{{this.Ruby_Rails}}</td>
+      <td>{{this.Java}}</td>
+      <td>{{this.Javascript}}</td>
+      <td>{{this.MySQL}}</td>
+      <td>{{this.React}}</td>
+      <td>{{this.PHP}}</td>
+      <td>{{this.Groovy_Grails}}</td>
+      <td>{{this.C_plus_plus}}</td>
+      <td>{{this.others}}</td>
+      <td>{{this.personality_type}}</td>
+    </tr>
+     
+  {{/each}}
+</table>
