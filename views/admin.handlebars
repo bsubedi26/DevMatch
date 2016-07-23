@@ -4,16 +4,21 @@
 {{!-- Added sticky footer so footer sticks to the bottom of the page --}}
 <link href="css/sticky_footer.css" rel="stylesheet">
 
-<h1>Recruiters Page</h1>
+<h2 class="text-center">Browse Applicants</h2>
+<hr>
 
-<p>Browse Applicants</p>
+{{!-- Table inline styles --}}
 <style>
 tr#table th {
     padding-right: 20px;
 }
+table {
+    line-height: 250%;
+}
 </style>
-<table id="table" width="100%">
-    <tr>
+
+<table class = "table-striped table-bordered table-hover table-condensed" id="table" width="100%">
+    <tr class="active">
       <th>Applicant ID</th>
       <th>First Name</th>
       <th>Last Name</th>
