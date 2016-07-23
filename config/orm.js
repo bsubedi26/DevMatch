@@ -42,54 +42,54 @@ var orm = {
     	console.log('looking for ' + CSS + " " + HTML);
     	return new Promise(function(resolve, reject){
     		if (CSS == null) {
-    			CSS = "false"
+    			CSS = "No"
     		} else {
-    			CSS = "true"
+    			CSS = "Yes"
     		}
     		if (HTML == null) {
-    			HTML = "false"
+    			HTML = "No"
     		} else {
-    			HTML = "true"
+    			HTML = "Yes"
     		}
     		if (Ruby_Rails == null) {
-    			Ruby_Rails = "false"
+    			Ruby_Rails = "No"
     		} else {
-    			Ruby_Rails = "true"
+    			Ruby_Rails = "Yes"
     		}
     		if (Java == null) {
-    			Java = "false"
+    			Java = "No"
     		} else {
-    			Java = "true"
+    			Java = "Yes"
     		}
     		if (Javascript == null) {
-    			Javascript = "false"
+    			Javascript = "No"
     		} else {
-    			Javascript = "true"
+    			Javascript = "Yes"
     		}
     		if (MySQL == null) {
-    			MySQL = "false"
+    			MySQL = "No"
     		} else {
-    			MySQL = "true"
+    			MySQL = "Yes"
     		}
     		if (React == null) {
-    			React = "false"
+    			React = "No"
     		} else {
-    			React = "true"
+    			React = "Yes"
     		}
     		if (PHP == null) {
-    			PHP = "false"
+    			PHP = "No"
     		} else {
-    			PHP = "true"
+    			PHP = "Yes"
     		}
     		if (Groovy_Grails == null) {
-    			Groovy_Grails = "false"
+    			Groovy_Grails = "No"
     		} else {
-    			Groovy_Grails = "true"
+    			Groovy_Grails = "Yes"
     		}
     		if (C_plus_plus == null) {
-    			C_plus_plus = "false"
+    			C_plus_plus = "No"
     		} else {
-    			C_plus_plus = "true"
+    			C_plus_plus = "Yes"
     		}
     		var queryString = 'INSERT INTO ' + table + ' SET ?';
     		connection.query(queryString, {first_name: first_name, last_name: last_name, email: email, address: address, phone_number: phone_number, linkedin: linkedin, github: github, CSS: CSS, HTML: HTML, Ruby_Rails: Ruby_Rails, Java: Java, Javascript: Javascript, MySQL: MySQL, React: React, PHP: PHP, Groovy_Grails: Groovy_Grails, C_plus_plus: C_plus_plus, others: others}, function(err, result){
