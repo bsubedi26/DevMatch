@@ -30,3 +30,11 @@ CREATE TABLE scores(
     personality_type varchar(255),
     PRIMARY KEY (id)
 );
+
+CREATE TABLE `users_table` (
+  `userId` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`userId`),
+  UNIQUE KEY `username` (`username`)
+);
