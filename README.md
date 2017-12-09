@@ -3,7 +3,7 @@ DevMatch is an application for tech companies looking to hire web developers spe
 
 Tech Used: Javascript, JQuery, HTML5, Bootstrap, CSS, Node.js, Express.js, MySQL, Handlebars.js, User Authentication, Model View Controller design pattern, CRUD, etc. 
 
-![Alt text](./public/img/Screen Shot 2016-07-26 at 3.40.51 PM.png?raw=true "Optional Title")
+![Alt text](https://raw.githubusercontent.com/bsubedi26/DevMatch/master/public/img/Screen Shot 2016-07-26 at 3.40.51 PM.png?raw=true "Optional Title")
 
 ![Alt text](/public/img/Screen Shot 2016-07-26 at 3.40.57 PM.png?raw=true "Optional Title")
 
